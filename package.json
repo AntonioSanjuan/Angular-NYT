@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "jest",
+    "test:watch": "jest --watchAll",
     "lint": "eslint ./src/app/**",
     "lint:fix": "eslint ./src/app/** --fix",
     "e2e": "ng e2e"
@@ -50,6 +51,10 @@
   },
   "jest": {
     "preset": "jest-preset-angular",
+    "moduleDirectories": [ "node_modules", "src" ],
+    "modulePaths": [
+      "<rootDir>"
+    ],
     "verbose": true,
     "setupFilesAfterEnv": [
       "<rootDir>/setup-jest.ts"

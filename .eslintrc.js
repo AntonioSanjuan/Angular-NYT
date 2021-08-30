@@ -1,20 +1,25 @@
 module.exports = {
   env: {
     browser: true,
+    node: true,
     es2021: true,
     jest: true,
   },
   extends: [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
+    'plugin:@typescript-eslint/recommended',
+    'eslint:recommended',
+    'prettier',
+    'plugin:prettier/recommended',
   ],
-  parser: "@typescript-eslint/parser",
+  root: true,
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: "module",
+    sourceType: 'module',
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ['@typescript-eslint'],
   rules: {
-    "linebreak-style": 0,
+    'prettier/prettier': 'warn',
+    'linebreak-style': 0,
   },
 };

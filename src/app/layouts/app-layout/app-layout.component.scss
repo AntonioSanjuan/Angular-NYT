@@ -1,0 +1,14 @@
+@use './../../../flex-styles.scss';
+@use './../../../colors.scss';
+
+.AppLayout_MainContainer {
+  @extend .app_Col-Start-Center;
+  height: 100%;
+}
+
+.AppLayout_ContentContainer {
+  @extend .app_Col-Start-Center;
+  height: 100%;
+
+  background-color: colors.$app-content-background-color;
+}

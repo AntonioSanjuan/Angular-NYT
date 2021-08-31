@@ -1,0 +1,13 @@
+@use './../../../flex-styles.scss';
+@use './../../../colors.scss';
+
+:host {
+  width: 100%;
+}
+
+.TopNav_Maincontainer {
+  @extend .app_Col-Center-Center;
+  height: 80px;
+
+  background-color: colors.$app-topnav-background-color;
+}

@@ -1,0 +1,31 @@
+@use './colors.scss';
+
+html,
+body {
+  height: 100%;
+}
+
+div {
+  width: 100%;
+}
+
+.skeleton {
+  background-color: colors.$app-skeleton-color !important;
+  color: colors.$app-skeleton-color !important;
+  border-radius: 20px;
+
+  // background:  linear-gradient(to right, #f1f0f0, #c1c0c0, #f1f0f0);
+  // background-size: 200%;
+  // background-position: left;
+
+  // animation: load 2s ease-out 1s infinite normal;
+}
+
+@keyframes load{
+  0%, 100%{
+        background-position: right;
+    }
+  50%{
+      background-position: left;
+  }
+}

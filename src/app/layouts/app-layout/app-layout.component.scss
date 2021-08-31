@@ -1,6 +1,7 @@
 @use './../../../flex-styles.scss';
 @use './../../../colors.scss';
 
+
 .AppLayout_MainContainer {
   @extend .app_Col-Start-Center;
   height: 100%;
@@ -11,4 +12,30 @@
   height: 100%;
 
   background-color: colors.$app-content-background-color;
+}
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  .AppLayout_HeaderContainer {
+    order:2
+  }
+  .AppLayout_ContentContainer {
+    order: 1;
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+  .AppLayout_HeaderContainer {
+    order:2
+  }
+  .AppLayout_ContentContainer {
+    order: 1;
+  }
 }

@@ -9,11 +9,10 @@ import { NYTMostPopularService } from 'src/app/services/NYT-data-supplier/most-p
 })
 export class HomeComponent implements OnInit {
   constructor(private nytMostPopularService: NYTMostPopularService) {}
-
   nytMostPopularViewedArticles: MostPopularViewedArticlesResponseDto;
 
   ngOnInit() {
-    this.fetchMostPopularViewedArticles(1);
+    // this.fetchMostPopularViewedArticles(1).then();
   }
 
   private async fetchMostPopularViewedArticles(periodOfTime: number) {

@@ -1,7 +1,8 @@
 import { MosPopularCommonDto } from '../common/MostPopularCommonDto.model';
 
-export interface MostPopularViewedArticlesResponseDto
-  extends MosPopularCommonDto<MostPopularViewedArticlesResponseContentDto> {}
+export type MostPopularViewedArticlesResponseDto = MosPopularCommonDto<
+  MostPopularViewedArticlesResponseContentDto[]
+>;
 
 export interface MostPopularViewedArticlesResponseContentDto {
   uri: string;
@@ -34,7 +35,7 @@ export interface Medium {
   caption: string;
   copyright: string;
   approved_for_syndication: number;
-  media_metadata: MediaMetadata[];
+  'media-metadata': MediaMetadata[];
 }
 
 export interface MediaMetadata {

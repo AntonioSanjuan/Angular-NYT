@@ -21,5 +21,13 @@ module.exports = {
   rules: {
     'prettier/prettier': 'warn',
     'linebreak-style': 0,
+    '@typescript-eslint/explicit-module-boundary-types': [
+      'warn',
+      {
+        allowedNames: ['ngOnInit', 'ngOnDestroy', 'ngAfterViewInit', 'ngOnChanges'],
+      },
+    ],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
   },
 };

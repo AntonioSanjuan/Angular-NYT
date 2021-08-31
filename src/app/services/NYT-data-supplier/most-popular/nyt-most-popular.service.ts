@@ -13,7 +13,9 @@ export class NYTMostPopularService {
     this.nytMostPopularNameHelper = new DataSupplierServicesNames(this.baseUrl);
   }
 
-  public async getMostPopularViewedArticles(periodOfTime: number) {
+  public async getMostPopularViewedArticles(
+    periodOfTime: number
+  ): Promise<MostPopularViewedArticlesResponseDto> {
     const getMostPopularViewedArticlesUrl =
       this.nytMostPopularNameHelper.nytMosPopular.getMostPopularViewedArticlesUrl(
         periodOfTime

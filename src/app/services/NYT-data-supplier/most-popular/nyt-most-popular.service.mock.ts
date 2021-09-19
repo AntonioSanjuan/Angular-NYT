@@ -1,5 +1,5 @@
 export const NYTMostPopularServiceMock = {
-  fetchMostPopularViewedArticles: jest.fn(() =>
-    new Promise((resolve, reject) => resolve({})).then(() => undefined)
+  getMostPopularViewedArticles: jest.fn(() =>
+    new Promise((resolve) => resolve({})).then(() => undefined)
   ),
 };

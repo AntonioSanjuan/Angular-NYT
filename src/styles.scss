@@ -1,17 +1,19 @@
 @use './colors.scss';
+@import './sizes.scss';
+// @import './flex-styles.scss';
 
-html,
-body {
-  height: 100%;
-}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 div {
   width: 100%;
 }
 
+p {
+  margin: 0%;
+}
 .skeleton {
-  background-color: colors.$app-skeleton-color !important;
-  color: colors.$app-skeleton-color !important;
   border-radius: 20px;
 
   // background:  linear-gradient(to right, #f1f0f0, #c1c0c0, #f1f0f0);
@@ -21,11 +23,11 @@ div {
   // animation: load 2s ease-out 1s infinite normal;
 }
 
-@keyframes load{
-  0%, 100%{
-        background-position: right;
-    }
-  50%{
-      background-position: left;
-  }
-}
+// @keyframes load{
+//   0%, 100%{
+//         background-position: right;
+//     }
+//   50%{
+//       background-position: left;
+//   }
+// }

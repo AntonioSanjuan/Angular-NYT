@@ -7,6 +7,7 @@ import { MostPopularViewedArticlesResponseDto } from 'src/app/models/dtos/mostPo
 @Injectable()
 export class NYTMostPopularService {
   private baseUrl = environment.API_BASE_URL;
+
   private nytMostPopularNameHelper: DataSupplierServicesNames;
 
   constructor(private http: HttpClient) {

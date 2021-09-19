@@ -1,12 +1,37 @@
-:host {
-    width: 100%;
-    height: 100%;
-}
-.Home_MainContainer {
 
+.Home_MainContainer {
+    height: inherit;
+    
 }
 
 .Home_News {
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
 
+    height: inherit;
+    flex-wrap: wrap;
+}
+
+.Home_New {
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
+
+    width: fit-content;
+    padding: 1%;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    .Home_News {
+        padding: 5%;
+    }
 }
 

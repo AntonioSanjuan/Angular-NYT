@@ -1,13 +1,19 @@
-@use './../../../flex-styles.scss';
 @use './../../../colors.scss';
+// @import './../../../flex-styles.scss';
 
 :host {
   width: 100%;
+  height: 100%;
 }
 
 .TopNav_Maincontainer {
-  @extend .app_Col-Center-Center;
-  height: 80px;
+  // @extend .app_Col-Center-Center;
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  place-content: center;
+  align-items: center;
 
+  height: 100%;
   background-color: colors.$app-topnav-background-color;
 }

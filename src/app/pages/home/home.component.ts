@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MostPopularViewedArticlesResponseDto } from 'src/app/models/dtos/mostPopularViewedArticles/mostPopularViewedArticlesResponseDto.model';
+import { DataCacheService } from 'src/app/services/data-cache/data-cache.service';
 import { NYTMostPopularService } from 'src/app/services/NYT-data-supplier/most-popular/nyt-most-popular.service';
 
 @Component({
@@ -8,11 +9,22 @@ import { NYTMostPopularService } from 'src/app/services/NYT-data-supplier/most-p
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private nytMostPopularService: NYTMostPopularService) {}
-  nytMostPopularViewedArticles: MostPopularViewedArticlesResponseDto;
+  nytMostPopularViewedArticles: MostPopularViewedArticlesResponseDto = {
+    results: Array(20).fill(undefined),
+  } as MostPopularViewedArticlesResponseDto;
 
-  ngOnInit() {
-    // this.fetchMostPopularViewedArticles(1).then();
+  constructor(
+    private nytMostPopularService: NYTMostPopularService,
+    private dataCacheService: DataCacheService
+  ) {}
+
+  async ngOnInit() {
+    this.fetchMostPopularViewedArticles(1);
+    this.dataCacheService
+      .mostPopularViewedArticles$()
+      .subscribe((mostPopularViewedArticles) => {
+        console.log('mostPopularViewedArticles', mostPopularViewedArticles);
+      });
   }
 
   private async fetchMostPopularViewedArticles(periodOfTime: number) {
@@ -20,9 +32,8 @@ export class HomeComponent implements OnInit {
       await this.nytMostPopularService.getMostPopularViewedArticles(
         periodOfTime
       );
-    console.log(
-      'this.nytMostPopularViewedArticles',
-      this.nytMostPopularViewedArticles
-    );
+    this.nytMostPopularViewedArticles.results.unshift(undefined);
+    this.dataCacheService.mostPopularViewedArticles =
+      this.nytMostPopularViewedArticles;
   }
 }

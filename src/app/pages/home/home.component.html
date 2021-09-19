@@ -1,5 +1,9 @@
 <div class="Home_MainContainer">
   <div class="Home_News">
-    <app-news-card></app-news-card>
+    <div class="Home_New" *ngFor="let article of nytMostPopularViewedArticles?.results">
+      <app-news-card
+        [news]='article'>
+      </app-news-card>
+    </div>
   </div>
 </div>

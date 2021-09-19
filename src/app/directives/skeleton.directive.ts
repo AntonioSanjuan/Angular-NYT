@@ -6,11 +6,10 @@ import { skeletonFade_Animation } from '../animations/skeletonFadeInAnimation';
   selector: '[appSkeleton]',
 })
 export class SkeletonDirective {
-  animationPlayer: AnimationPlayer;
-  private viewInitialized = false;
+  private animationPlayer: AnimationPlayer;
 
-  @Input() set appSkeleton(isLoaded: boolean) {
-    isLoaded ? this.unsetSkeleton() : this.setSkeleton();
+  @Input() set appSkeleton(skeletonRequired: boolean) {
+    skeletonRequired ? this.setSkeleton() : this.unsetSkeleton();
   }
   constructor(
     private el: ElementRef,

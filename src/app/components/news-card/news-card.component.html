@@ -1,11 +1,11 @@
-<div class="NewsCard_MainContainer">
-    <div class="NewsCard_ImageContainer" [appSkeleton]="!news">
+<div class="NewsCard_MainContainer" [appSkeleton]="!news">
+    <div class="NewsCard_ImageContainer skeletonElement">
         <img *ngIf="news && hasImage()" class="NewsCard_Image" [src]="getImage()">
         <img *ngIf="news && !hasImage()" class="NewsCard_Image" src="../../../assets/images/NoImage.png">
     </div>
     <div class="NewsCard_CategoryContainer">
-        <div class="NewsCard_CategoryByLine" [appSkeleton]="!news">{{news?.byline}}</div>
-        <div class="NewsCard_CategorySection" [appSkeleton]="!news">{{news?.section}}</div>
+        <div #skeleton class="NewsCard_CategoryByLine skeletonElement">{{news?.byline}}</div>
+        <div #skeleton class="NewsCard_CategorySection skeletonElement" >{{news?.section}}</div>
     </div>
     <div class="NewsCard_TitleContainer">
         <div *ngIf="news; else titleSkeleton">
@@ -25,27 +25,27 @@
 </div>
 
 <ng-template #titleSkeleton>
-    <div class="NewsCard_TextSkeletonContainer">
-        <div class="NewsCard_TextSkeleton" style="width: 15%;" [appSkeleton]="!news" ></div>
-        <div class="NewsCard_TextSkeleton" style="width: 30%;" [appSkeleton]="!news"></div>
-        <div class="NewsCard_TextSkeleton" style="width: 30%;" [appSkeleton]="!news"></div>
-        <div class="NewsCard_TextSkeleton" style="width: 50%;" [appSkeleton]="!news"></div>
+    <div class="NewsCard_TextSkeletonContainer" [appSkeleton]="!news">
+        <div class="NewsCard_TextSkeleton skeletonElement" style="width: 15%;" ></div>
+        <div class="NewsCard_TextSkeleton skeletonElement" style="width: 30%;"></div>
+        <div class="NewsCard_TextSkeleton skeletonElement" style="width: 30%;"></div>
+        <div class="NewsCard_TextSkeleton skeletonElement" style="width: 50%;"></div>
     </div>
 </ng-template>
 
 <ng-template #textSkeleton>
-    <div class="NewsCard_TextSkeletonContainer">
-        <div class="NewsCard_TextSkeleton" style="width: 15%;" [appSkeleton]="!news"></div>
-        <div class="NewsCard_TextSkeleton" style="width: 50%;" [appSkeleton]="!news"></div>
-        <div class="NewsCard_TextSkeleton" style="width: 25%;" [appSkeleton]="!news"></div>
+    <div class="NewsCard_TextSkeletonContainer" [appSkeleton]="!news">
+        <div class="NewsCard_TextSkeleton skeletonElement" style="width: 15%;"></div>
+        <div class="NewsCard_TextSkeleton skeletonElement" style="width: 50%;"></div>
+        <div class="NewsCard_TextSkeleton skeletonElement" style="width: 25%;"></div>
 
-        <div class="NewsCard_TextSkeleton" style="width: 60%;" [appSkeleton]="!news"></div>
-        <div class="NewsCard_TextSkeleton" style="width: 30%;" [appSkeleton]="!news"></div>
+        <div class="NewsCard_TextSkeleton skeletonElement" style="width: 60%;" ></div>
+        <div class="NewsCard_TextSkeleton skeletonElement" style="width: 30%;"></div>
 
-        <div class="NewsCard_TextSkeleton" style="width: 45%;" [appSkeleton]="!news"></div>
-        <div class="NewsCard_TextSkeleton" style="width: 15%;" [appSkeleton]="!news"></div>
-        <div class="NewsCard_TextSkeleton" style="width: 30%;" [appSkeleton]="!news"></div>
+        <div class="NewsCard_TextSkeleton skeletonElement" style="width: 45%;"></div>
+        <div class="NewsCard_TextSkeleton skeletonElement" style="width: 15%;"></div>
+        <div class="NewsCard_TextSkeleton skeletonElement" style="width: 30%;"></div>
 
-        <div class="NewsCard_TextSkeleton" style="width: 30%;" [appSkeleton]="!news"></div>
+        <div class="NewsCard_TextSkeleton skeletonElement" style="width: 30%;"></div>
     </div>
 </ng-template>

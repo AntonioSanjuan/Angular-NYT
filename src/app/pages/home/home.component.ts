@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     private dataCacheService: DataCacheService
   ) {}
 
-  async ngOnInit() {
+  ngOnInit() {
     this.fetchMostPopularViewedArticles(1);
     this.dataCacheService
       .mostPopularViewedArticles$()

@@ -1,10 +1,15 @@
 @use './colors.scss';
 @import './sizes.scss';
-// @import './flex-styles.scss';
-
+@import './bootstrap-override.scss';
+@import './fonts.scss';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body { 
+  margin: 0; 
+  font-family: Arial, sans-serif; 
+  background-color: colors.$app-content-background-color;
+}
 
 div {
   width: 100%;
@@ -13,6 +18,7 @@ div {
 p {
   margin: 0%;
 }
+
 .skeleton {
   border-radius: 20px;
 
@@ -30,4 +36,9 @@ p {
   50%{
       background-position: left;
   }
+}
+
+.app-primary-button {
+  color: colors.$font-color;
+  background-color: colors.$primary-color;
 }

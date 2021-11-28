@@ -5,12 +5,16 @@ import { SkeletonDirective } from 'src/app/directives/skeleton.directive';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
 import { DataCacheService } from 'src/app/services/data-cache/data-cache.service';
 import { NYTMostPopularService } from 'src/app/services/NYT-data-supplier/most-popular/nyt-most-popular.service';
-import { HomeComponent } from './home.component';
+import { MostPopularArticlesComponent } from './mostPopularArticles.component';
 
-const routes: Routes = [{ path: '', component: HomeComponent }];
+const routes: Routes = [{ path: '', component: MostPopularArticlesComponent }];
 
 @NgModule({
-  declarations: [HomeComponent, NewsCardComponent, SkeletonDirective],
+  declarations: [
+    MostPopularArticlesComponent,
+    NewsCardComponent,
+    SkeletonDirective,
+  ],
   providers: [NYTMostPopularService, DataCacheService],
   imports: [SharedModule, RouterModule.forChild(routes)],
   exports: [SharedModule],

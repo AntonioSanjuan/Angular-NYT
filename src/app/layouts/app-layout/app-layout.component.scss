@@ -1,4 +1,3 @@
-@use './../../../colors.scss';
 @use './../../../sizes.scss';
 // @import './../../../flex-styles.scss';
 
@@ -30,8 +29,6 @@
   display: flex;
   place-content: flex-start;
   align-items: center;
-
-  background-color: colors.$app-content-background-color;
 }
 
 

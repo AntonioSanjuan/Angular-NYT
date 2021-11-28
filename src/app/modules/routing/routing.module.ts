@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { AppLayoutComponent } from 'src/app/layouts/app-layout/app-layout.component';
 
-const default_route = 'home';
+const default_route = 'mostPopularArticles';
 
 export const routes: Routes = [
   { path: '', redirectTo: default_route, pathMatch: 'full' },
@@ -10,9 +10,11 @@ export const routes: Routes = [
     component: AppLayoutComponent,
     children: [
       {
-        path: 'home',
+        path: 'mostPopularArticles',
         loadChildren: () =>
-          import('./../../pages/home/home.module').then((m) => m.HomeModule),
+          import(
+            '../../pages/mostPopularArticles/mostPopularArticles.module'
+          ).then((m) => m.HomeModule),
       },
     ],
   },

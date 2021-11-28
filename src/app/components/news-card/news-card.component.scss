@@ -1,7 +1,7 @@
 @import './../../../flex-styles.scss';
   
 .NewsCard_MainContainer {
-  @extend .app_Col-Start-Center;
+  @extend %app_Col-Start-Center;
   
   background-color: #f7f7f7;
   padding: 15px;
@@ -20,7 +20,7 @@
 }
 
 .NewsCard_CategoryContainer {
-  @extend .app_Row-Between-Center;
+  @extend %app_Row-Between-Center;
   margin: 2%;
 }
 
@@ -35,7 +35,7 @@
   object-position: center;
 }
 
-.NewsCard_TitleContainer {
+.NewsCard_TextContainer {
   margin-top: 5%;
 }
 
@@ -49,15 +49,16 @@
   min-height: 1em;
   min-width: 50px;
 }
-.NewsCard_TitleContainer.skeleton {
+.NewsCard_TextContainer.skeleton {
   min-height: 1em;
 }
 
 
 /* Skeleton template -----------*/
 .NewsCard_TextSkeletonContainer {
-  @extend .app_Row-Between-Center;
+  @extend %app_Row-Between-Center;
   flex-wrap: wrap;
+  margin-top: 10%;
 }
 
 .NewsCard_TextSkeleton {
@@ -72,5 +73,8 @@ and (min-device-width : 320px)
 and (max-device-width : 480px) {
   .NewsCard_ImageContainer {
     width: 100%;
+  }
+  .NewsCard_MainContainer {
+    height: fit-content;
   }
 }

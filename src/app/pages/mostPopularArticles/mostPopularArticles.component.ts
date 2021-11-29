@@ -1,7 +1,9 @@
+import { AppDataState } from './../../services/state/data/models/appData.state';
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { MostPopularViewedArticlesResponseDto } from 'src/app/models/dtos/mostPopularViewedArticles/mostPopularViewedArticlesResponseDto.model';
-import { DataCacheService } from 'src/app/services/data-cache/data-cache.service';
 import { NYTMostPopularService } from 'src/app/services/NYT-data-supplier/most-popular/nyt-most-popular.service';
+import { setMostPopularViewedArticlesAction } from 'src/app/services/state/data/data.actions';
 
 enum PeriodOfTimes {
   Daily = 1,
@@ -23,10 +25,13 @@ export class MostPopularArticlesComponent implements OnInit {
 
   constructor(
     private nytMostPopularService: NYTMostPopularService,
-    private dataCacheService: DataCacheService
+    private store: Store<AppDataState>
   ) {}
 
-  async ngOnInit() {
+  async ngOnInit(): Promise<void> {
+    this.store.select<any>('data').subscribe((state: AppDataState) => {
+      console.log('estado actual: ', state);
+    });
     await this.fetchData();
   }
 
@@ -41,11 +46,18 @@ export class MostPopularArticlesComponent implements OnInit {
         this.selectedPeriodOfTime
       );
     this.nytMostPopularViewedArticles.results.unshift(undefined);
-    this.dataCacheService.mostPopularViewedArticles =
-      this.nytMostPopularViewedArticles;
+    this.storeData();
   }
 
-  private setEmptyArticles() {
+  private storeData(): void {
+    this.store.dispatch(
+      setMostPopularViewedArticlesAction({
+        mostPopularViewedArticles_newState: this.nytMostPopularViewedArticles,
+      })
+    );
+  }
+
+  private setEmptyArticles(): void {
     this.nytMostPopularViewedArticles = {
       results: Array(20).fill(undefined),
     } as MostPopularViewedArticlesResponseDto;

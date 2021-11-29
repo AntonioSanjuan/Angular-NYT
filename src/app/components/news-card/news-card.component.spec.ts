@@ -43,7 +43,7 @@ describe('NewsCardComponent', () => {
 
   it('hasImage() should return false if has no one image', () => {
     const articleWithImage = {
-      media: undefined,
+      media: [],
     } as MostPopularViewedArticlesResponseContentDto;
 
     component.article = articleWithImage;

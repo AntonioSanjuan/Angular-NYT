@@ -17,7 +17,6 @@ export class RequestAuthInterceptor implements HttpInterceptor {
         'api-key': environment.NYT_API_key,
       },
     });
-    console.log(request);
     return next.handle(request);
   }
 }

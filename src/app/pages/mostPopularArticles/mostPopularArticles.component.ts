@@ -32,11 +32,8 @@ export class MostPopularArticlesComponent implements OnInit {
   async ngOnInit() {
     this.store
       .pipe(select(selectMostPopularViewedArticles))
-      .subscribe((mostPopularViewedArticles: any) => {
-        console.log(
-          'selectMostPopularViewedArticles: ',
-          mostPopularViewedArticles
-        );
+      .subscribe((response: any) => {
+        this.nytMostPopularViewedArticles = response;
       });
     await this.fetchData();
   }
@@ -51,6 +48,7 @@ export class MostPopularArticlesComponent implements OnInit {
       await this.nytMostPopularService.getMostPopularViewedArticles(
         this.selectedPeriodOfTime
       );
+    console.log(this.nytMostPopularViewedArticles);
 
     this.addEmptyArticle();
     this.storeData();

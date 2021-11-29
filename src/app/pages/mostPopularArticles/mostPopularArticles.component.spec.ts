@@ -1,27 +1,25 @@
-import { AppDataState } from './../../services/state/data/models/appData.state';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Subject } from 'rxjs';
 import { MostPopularViewedArticlesResponseDto } from 'src/app/models/dtos/mostPopularViewedArticles/mostPopularViewedArticlesResponseDto.model';
 import { CoreModule } from 'src/app/modules/core/core.module';
 import { NYTMostPopularService } from 'src/app/services/NYT-data-supplier/most-popular/nyt-most-popular.service';
 import { NYTMostPopularServiceMock } from 'src/app/services/NYT-data-supplier/most-popular/nyt-most-popular.service.mock';
 import { MostPopularArticlesComponent } from './mostPopularArticles.component';
 import { HomeModule } from './mostPopularArticles.module';
-import { selectMostPopularViewedArticles } from 'src/app/services/state/data/data.selectors';
 import { Store } from '@ngrx/store';
+import { StoreMock } from 'src/app/services/state/utils/store.mock';
+import { Subject } from 'rxjs';
 
 describe('MostPopularArticlesComponent', () => {
   let component: MostPopularArticlesComponent;
   let fixture: ComponentFixture<MostPopularArticlesComponent>;
-
-  let store;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CoreModule, HomeModule],
       providers: [
         { provide: NYTMostPopularService, useValue: NYTMostPopularServiceMock },
+        { provide: Store, useValue: StoreMock },
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
@@ -29,8 +27,6 @@ describe('MostPopularArticlesComponent', () => {
     fixture = TestBed.createComponent(MostPopularArticlesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-
-    store = TestBed.inject(Store);
   });
 
   it('should create', () => {
@@ -40,9 +36,10 @@ describe('MostPopularArticlesComponent', () => {
   it('MostPopularArticlesComponent initially must request mostPopularViewedArticles page 1', () => {
     const sut = 1;
     // spy
-    const fetchSpy = jest
-      .spyOn(NYTMostPopularServiceMock, 'getMostPopularViewedArticles')
-      .mockResolvedValue({});
+    const fetchSpy = jest.spyOn(
+      NYTMostPopularServiceMock,
+      'getMostPopularViewedArticles'
+    );
     fixture.detectChanges();
 
     component.ngOnInit().then(() => {
@@ -50,11 +47,14 @@ describe('MostPopularArticlesComponent', () => {
     });
   });
 
-  it('MostPopularArticlesComponent initially must save mostPopularViewedArticles page 1 in the data-cache service', () => {
+  it('MostPopularArticlesComponent initially must save mostPopularViewedArticles page 1 in the store service', () => {
+    //spy
+    const stateSpy = jest.spyOn(StoreMock, 'dispatch');
+
     const sut = {
       results: Array(20).fill(undefined),
     } as MostPopularViewedArticlesResponseDto;
-    // spy
+
     jest
       .spyOn(NYTMostPopularServiceMock, 'getMostPopularViewedArticles')
       .mockResolvedValue(sut);
@@ -62,8 +62,7 @@ describe('MostPopularArticlesComponent', () => {
     fixture.detectChanges;
     component.ngOnInit().then(() => {
       expect(component.nytMostPopularViewedArticles).toEqual(sut);
-      expect(store.mostPopularViewedArticles).toEqual(sut);
-      console.log('eeeepa', store.mostPopularViewedArticles);
+      expect(stateSpy).toHaveBeenCalled();
     });
   });
 
@@ -72,11 +71,7 @@ describe('MostPopularArticlesComponent', () => {
     const subject: Subject<MostPopularViewedArticlesResponseDto> =
       new Subject();
 
-    store.select(selectMostPopularViewedArticles). = subject.asObservable();
-
-    jest
-      .spyOn(store, 'mostPopularViewedArticles$')
-      .mockReturnValue(subject.asObservable());
+    jest.spyOn(StoreMock, 'pipe').mockReturnValue(subject.asObservable());
 
     component.ngOnInit().then(() => {
       subject.next({ results: [] } as MostPopularViewedArticlesResponseDto);

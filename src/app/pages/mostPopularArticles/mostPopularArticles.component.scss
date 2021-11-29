@@ -10,11 +10,7 @@
 }
 
 .MostPopularArticles_FilterContainer {
-    flex-direction: row;
-    box-sizing: border-box;
-    display: flex;
-    place-content: center;
-    align-items: center;
+    @extend %app_Row-Center-Center;
 
     padding: 2% 5%;
 }
@@ -24,22 +20,14 @@
 }
 
 .MostPopularArticles_News {
-    flex-direction: row;
-    box-sizing: border-box;
-    display: flex;
-    place-content: center;
-    align-items: center;
+    @extend %app_Row-Center-Center;
 
     height: inherit;
     flex-wrap: wrap;
 }
 
 .MostPopularArticles_New {
-    flex-direction: column;
-    box-sizing: border-box;
-    display: flex;
-    place-content: center;
-    align-items: center;
+    @extend %app_Col-Center-Center;
 
     width: fit-content;
     padding: 1%;

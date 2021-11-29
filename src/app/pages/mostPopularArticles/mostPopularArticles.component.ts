@@ -29,7 +29,7 @@ export class MostPopularArticlesComponent implements OnInit {
     private store: Store<AppDataState>
   ) {}
 
-  async ngOnInit(): Promise<void> {
+  async ngOnInit() {
     this.store
       .pipe(select(selectMostPopularViewedArticles))
       .subscribe((mostPopularViewedArticles: any) => {
@@ -51,9 +51,15 @@ export class MostPopularArticlesComponent implements OnInit {
       await this.nytMostPopularService.getMostPopularViewedArticles(
         this.selectedPeriodOfTime
       );
-    console.log('quuuuuuuue', this.nytMostPopularViewedArticles);
-    this.nytMostPopularViewedArticles.results.unshift(undefined);
+
+    this.addEmptyArticle();
     this.storeData();
+  }
+
+  private addEmptyArticle() {
+    if (this.nytMostPopularViewedArticles.results) {
+      this.nytMostPopularViewedArticles.results.unshift(undefined);
+    }
   }
 
   private storeData(): void {

@@ -1,4 +1,12 @@
-.app_Col-Center-Center {
+%app_Col-Start-Center {
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  place-content: flex-start;
+  align-items: center;
+}
+
+%app_Col-Center-Center {
   flex-direction: column;
   box-sizing: border-box;
   display: flex;
@@ -6,10 +14,19 @@
   align-items: center;
 }
 
-.app_Col-Start-Center {
-  flex-direction: column;
+%app_Row-Center-Center {
+  flex-direction: row;
   box-sizing: border-box;
   display: flex;
-  place-content: flex-start;
+  place-content: center;
   align-items: center;
 }
+
+%app_Row-Between-Center {
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  place-content: space-between;
+  align-items: center;
+}
+

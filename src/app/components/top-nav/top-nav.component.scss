@@ -1,13 +1,43 @@
-@use './../../../flex-styles.scss';
-@use './../../../colors.scss';
+@import './../../../flex-styles.scss';
 
 :host {
   width: 100%;
+  height: 100%;
 }
 
 .TopNav_Maincontainer {
-  @extend .app_Col-Center-Center;
-  height: 80px;
+  @extend %app_Col-Center-Center;
 
-  background-color: colors.$app-topnav-background-color;
+  height: 100%;
+  padding: 0% 4%;
+}
+
+.TopNav_Subcontainer {
+  @extend %app_Row-Between-Center;
+
+  height: inherit;
+  width: 80%;
+  border-bottom-color: black;
+  border-bottom-width: 2px;
+  border-bottom-style: ridge;
+}
+
+.TopNav_Centercontainer {
+  height: 100%;
+  width: 20%;
+  text-align: center;
+}
+
+.TopNav_Leftcontainer, .TopNav_Rightcontainer {
+  @extend %app_Row-Center-Center;
+  height: 100%;
+  width: 20%;
+}
+
+.TopNav_Rightcontainer {
+  place-content: flex-end;
+}
+
+.TopNav_Leftcontainer {
+  place-content: flex-start;
 }

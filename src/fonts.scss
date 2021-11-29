@@ -1,0 +1,26 @@
+$big-fontColor: #2b2b2b;
+$small-fontColor: #888;
+$normal-fontColor: #555;
+
+
+.small_font {
+    color: $small-fontColor;
+
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.normal_font {
+    color: $normal-fontColor;
+
+    font-size: 16px;
+    
+}
+
+.big_font {
+    color: $big-fontColor;
+
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2em;
+}

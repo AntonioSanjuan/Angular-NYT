@@ -1,24 +1,32 @@
 @use './colors.scss';
+@import './sizes.scss';
+@import './bootstrap-override.scss';
+@import './fonts.scss';
 
-html,
-body {
-  height: 100%;
+html, body { height: 100%; }
+
+body { 
+  margin: 0; 
+  font-family: Arial, sans-serif; 
+  background-color: colors.$app-content-background-color;
 }
 
 div {
   width: 100%;
 }
 
+p {
+  margin: 0%;
+}
+
 .skeleton {
-  background-color: colors.$app-skeleton-color !important;
-  color: colors.$app-skeleton-color !important;
   border-radius: 20px;
 
-  // background:  linear-gradient(to right, #f1f0f0, #c1c0c0, #f1f0f0);
-  // background-size: 200%;
-  // background-position: left;
+  background:  linear-gradient(to right, #e5e3e3, #999999, #e5e3e3);
+  background-size: 200%;
+  background-position: left;
 
-  // animation: load 2s ease-out 1s infinite normal;
+  animation: load 2s ease-out 1s infinite normal;
 }
 
 @keyframes load{
@@ -28,4 +36,9 @@ div {
   50%{
       background-position: left;
   }
+}
+
+.app-primary-button {
+  color: colors.$font-color;
+  background-color: colors.$primary-color;
 }

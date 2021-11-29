@@ -1,17 +1,34 @@
-@use './../../../flex-styles.scss';
-@use './../../../colors.scss';
+@use './../../../sizes.scss';
+// @import './../../../flex-styles.scss';
 
+.AppLayout_MainContainer{
+  // @include app_Col-Start-Center;
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  place-content: flex-start;
+  align-items: center;
 
-.AppLayout_MainContainer {
-  @extend .app_Col-Start-Center;
   height: 100%;
+}
+.AppLayout_HeaderContainer {
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  place-content: flex-start;
+  align-items: center;
+  
+  min-height: sizes.$app-topnav-desktop-height;
+  height: sizes.$app-topnav-desktop-height;
 }
 
 .AppLayout_ContentContainer {
-  @extend .app_Col-Start-Center;
-  height: 100%;
-
-  background-color: colors.$app-content-background-color;
+  // @include app-Col-Start-Center;
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  place-content: flex-start;
+  align-items: center;
 }
 
 
@@ -21,10 +38,17 @@
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
   .AppLayout_HeaderContainer {
-    order:2
+    order:2;
+    
+    min-height: sizes.$app-topnav-mobile-height;
+    height: sizes.$app-topnav-mobile-height;
+    position: fixed;
+    bottom: 0;
   }
   .AppLayout_ContentContainer {
     order: 1;
+
+    padding-bottom: sizes.$app-topnav-mobile-height;
   }
 }
 
@@ -33,9 +57,16 @@ and (max-device-width : 480px) {
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) {
   .AppLayout_HeaderContainer {
-    order:2
+    order:2;
+
+    min-height: sizes.$app-topnav-mobile-height;
+    height: sizes.$app-topnav-mobile-height;
+    position: fixed;
+    bottom: 0;
   }
   .AppLayout_ContentContainer {
     order: 1;
+
+    padding-bottom: sizes.$app-topnav-mobile-height;
   }
 }

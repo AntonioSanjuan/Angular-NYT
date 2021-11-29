@@ -1,0 +1,71 @@
+@import './../../../flex-styles.scss';
+
+.MostPopularArticles_MainContainer {
+  @extend %app_Col-Center-Center;
+  height: inherit;
+}
+
+.MostPopularArticles_SubContainer {
+    width: 80%;
+}
+
+.MostPopularArticles_FilterContainer {
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
+
+    padding: 2% 5%;
+}
+
+.MostPopularArticles_Filter {
+    width: 300px;
+}
+
+.MostPopularArticles_News {
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
+
+    height: inherit;
+    flex-wrap: wrap;
+}
+
+.MostPopularArticles_New {
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
+
+    width: fit-content;
+    padding: 1%;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    .MostPopularArticles_SubContainer {
+        width: 100%;
+    }
+
+    .MostPopularArticles_FilterContainer {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 5%;
+    }
+
+    .MostPopularArticles_Filter  {
+        margin-top: 3%;
+        width: fit-content;
+    }
+
+    .MostPopularArticles_News {
+        padding: 5%;
+    }
+}
+

@@ -33,7 +33,7 @@ describe('MostPopularArticlesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('MostPopularArticlesComponent initially must request mostPopularViewedArticles page 1', () => {
+  it('MostPopularArticlesComponent initially must request mostPopularViewedArticles first page', () => {
     const sut = 1;
     // spy
     const fetchSpy = jest.spyOn(
@@ -47,7 +47,7 @@ describe('MostPopularArticlesComponent', () => {
     });
   });
 
-  it('MostPopularArticlesComponent initially must save mostPopularViewedArticles page 1 in the store service', () => {
+  it('MostPopularArticlesComponent initially must save mostPopularViewedArticles first page in the store service', () => {
     //spy
     const stateSpy = jest.spyOn(StoreMock, 'dispatch');
 

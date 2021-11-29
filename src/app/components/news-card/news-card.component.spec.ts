@@ -1,6 +1,11 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SkeletonDirective } from 'src/app/directives/skeleton.directive';
+import {
+  Medium,
+  MostPopularViewedArticlesResponseContentDto,
+} from 'src/app/models/dtos/mostPopularViewedArticles/mostPopularViewedArticlesResponseDto.model';
 import { CoreModule } from 'src/app/modules/core/core.module';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
 
@@ -24,5 +29,25 @@ describe('NewsCardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('hasImage() should return true if at least has one image', () => {
+    const articleWithImage = {
+      media: [{} as Medium],
+    } as MostPopularViewedArticlesResponseContentDto;
+
+    component.article = articleWithImage;
+    const sut = component.hasImage();
+    expect(sut).toBeTruthy();
+  });
+
+  it('hasImage() should return false if has no one image', () => {
+    const articleWithImage = {
+      media: undefined,
+    } as MostPopularViewedArticlesResponseContentDto;
+
+    component.article = articleWithImage;
+    const sut = component.hasImage();
+    expect(sut).toBeFalsy();
   });
 });

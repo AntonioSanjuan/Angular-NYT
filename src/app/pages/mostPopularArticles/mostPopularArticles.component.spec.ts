@@ -40,17 +40,18 @@ describe('MostPopularArticlesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('MostPopularArticlesComponent initially must request mostPopularViewedArticles page 1', () => {
-  //   const sut = 1;
-  //   // spy
-  //   const fetchSpy = jest
-  //     .spyOn(NYTMostPopularServiceMock, 'getMostPopularViewedArticles')
-  //     .mockResolvedValue({});
+  it('MostPopularArticlesComponent initially must request mostPopularViewedArticles page 1', () => {
+    const sut = 1;
+    // spy
+    const fetchSpy = jest
+      .spyOn(NYTMostPopularServiceMock, 'getMostPopularViewedArticles')
+      .mockResolvedValue({});
+    fixture.detectChanges();
 
-  //   component.ngOnInit().then(() => {
-  //     expect(fetchSpy).toHaveBeenCalledWith(sut);
-  //   });
-  // });
+    component.ngOnInit().then(() => {
+      expect(fetchSpy).toHaveBeenCalledWith(sut);
+    });
+  });
 
   // it('MostPopularArticlesComponent initially must save mostPopularViewedArticles page 1 in the data-cache service', () => {
   //   const sut = {

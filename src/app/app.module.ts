@@ -5,7 +5,6 @@ import { APP_ROUTES } from './modules/routing/routing.module';
 import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
 import { CoreModule } from './modules/core/core.module';
 import { AppLayoutModule } from './layouts/app-layout/app-layout.module';
-import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [AppComponent, AppLayoutComponent],

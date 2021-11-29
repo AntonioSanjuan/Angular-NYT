@@ -51,6 +51,7 @@ export class MostPopularArticlesComponent implements OnInit {
       await this.nytMostPopularService.getMostPopularViewedArticles(
         this.selectedPeriodOfTime
       );
+    console.log('quuuuuuuue', this.nytMostPopularViewedArticles);
     this.nytMostPopularViewedArticles.results.unshift(undefined);
     this.storeData();
   }

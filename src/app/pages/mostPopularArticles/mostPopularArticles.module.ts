@@ -1,3 +1,4 @@
+import { featureName } from './../../services/state/data/data.reducer';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
@@ -20,7 +21,7 @@ const routes: Routes = [{ path: '', component: MostPopularArticlesComponent }];
   providers: [NYTMostPopularService, DataCacheService],
   imports: [
     SharedModule,
-    StoreModule.forFeature('data', DataReducer),
+    StoreModule.forFeature(featureName, DataReducer),
     RouterModule.forChild(routes),
   ],
   exports: [SharedModule],

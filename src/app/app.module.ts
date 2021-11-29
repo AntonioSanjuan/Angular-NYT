@@ -9,7 +9,7 @@ import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [AppComponent, AppLayoutComponent],
-  imports: [CoreModule, AppLayoutModule, StoreModule.forRoot({}), APP_ROUTES],
+  imports: [CoreModule, AppLayoutModule, APP_ROUTES],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

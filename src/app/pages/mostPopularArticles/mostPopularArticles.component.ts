@@ -1,9 +1,10 @@
 import { AppDataState } from './../../services/state/data/models/appData.state';
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { MostPopularViewedArticlesResponseDto } from 'src/app/models/dtos/mostPopularViewedArticles/mostPopularViewedArticlesResponseDto.model';
 import { NYTMostPopularService } from 'src/app/services/NYT-data-supplier/most-popular/nyt-most-popular.service';
 import { setMostPopularViewedArticlesAction } from 'src/app/services/state/data/data.actions';
+import { selectMostPopularViewedArticles } from 'src/app/services/state/data/data.selectors';
 
 enum PeriodOfTimes {
   Daily = 1,
@@ -29,9 +30,14 @@ export class MostPopularArticlesComponent implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    this.store.select<any>('data').subscribe((state: AppDataState) => {
-      console.log('estado actual: ', state);
-    });
+    this.store
+      .pipe(select(selectMostPopularViewedArticles))
+      .subscribe((mostPopularViewedArticles: any) => {
+        console.log(
+          'selectMostPopularViewedArticles: ',
+          mostPopularViewedArticles
+        );
+      });
     await this.fetchData();
   }
 

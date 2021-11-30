@@ -9,7 +9,7 @@ export class NYTMostPopularNameHelper {
   }
 
   getMostPopularViewedArticlesUrl(periodOfTime: number): string {
-    let url = this.baseUrl + NYTMostPopularNames.MostPopularViewedArticles;
+    const url = this.baseUrl + NYTMostPopularNames.MostPopularViewedArticles;
     return url.replace('{period}', periodOfTime.toString());
   }
 }

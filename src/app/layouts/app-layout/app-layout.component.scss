@@ -1,7 +1,7 @@
 @use './../../../sizes.scss';
 // @import './../../../flex-styles.scss';
 
-.AppLayout_MainContainer{
+.AppLayout_MainContainer {
   // @include app_Col-Start-Center;
   flex-direction: column;
   box-sizing: border-box;
@@ -17,7 +17,7 @@
   display: flex;
   place-content: flex-start;
   align-items: center;
-  
+
   min-height: sizes.$app-topnav-desktop-height;
   height: sizes.$app-topnav-desktop-height;
 }
@@ -31,15 +31,11 @@
   align-items: center;
 }
 
-
-
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .AppLayout_HeaderContainer {
-    order:2;
-    
+    order: 2;
+
     min-height: sizes.$app-topnav-mobile-height;
     height: sizes.$app-topnav-mobile-height;
     position: fixed;
@@ -53,11 +49,9 @@ and (max-device-width : 480px) {
 }
 
 /* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .AppLayout_HeaderContainer {
-    order:2;
+    order: 2;
 
     min-height: sizes.$app-topnav-mobile-height;
     height: sizes.$app-topnav-mobile-height;

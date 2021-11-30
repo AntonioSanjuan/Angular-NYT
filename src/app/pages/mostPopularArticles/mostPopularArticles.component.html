@@ -2,21 +2,24 @@
   <div class="MostPopularArticles_SubContainer">
     <div class="MostPopularArticles_FilterContainer">
       <div>
-        <p class="big_font">
-          Most Popular Articles
-        </p>
+        <p class="big_font">Most Popular Articles</p>
       </div>
-      <select class="form-select MostPopularArticles_Filter" [(ngModel)]="selectedPeriodOfTime" (change)="fetchData()">
+      <select
+        class="form-select MostPopularArticles_Filter"
+        [(ngModel)]="selectedPeriodOfTime"
+        (change)="fetchData()"
+      >
         <option [value]="periodOfTimes.Daily">Daily</option>
         <option [value]="periodOfTimes.Weekly">Weekly</option>
         <option [value]="periodOfTimes.Monthly">Monthly</option>
       </select>
     </div>
     <div class="MostPopularArticles_News">
-      <div class="MostPopularArticles_New" *ngFor="let article of nytMostPopularViewedArticles?.results">
-        <app-news-card
-          [article]='article'>
-        </app-news-card>
+      <div
+        class="MostPopularArticles_New"
+        *ngFor="let article of nytMostPopularViewedArticles?.results"
+      >
+        <app-news-card [article]="article"> </app-news-card>
       </div>
     </div>
   </div>

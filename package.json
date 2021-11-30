@@ -9,6 +9,7 @@
     "test:watch": "jest --watchAll",
     "lint": "eslint ./src/app/**",
     "lint:fix": "eslint --fix ./src/app",
+    "format": "prettier --end-of-line crlf --write ./src/app/**",
     "e2e": "ng e2e"
   },
   "private": true,

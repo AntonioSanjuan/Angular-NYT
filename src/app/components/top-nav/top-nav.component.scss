@@ -1,4 +1,4 @@
-@import './../../../flex-styles.scss';
+@import "./../../../flex-styles.scss";
 
 :host {
   width: 100%;
@@ -28,7 +28,8 @@
   text-align: center;
 }
 
-.TopNav_Leftcontainer, .TopNav_Rightcontainer {
+.TopNav_Leftcontainer,
+.TopNav_Rightcontainer {
   @extend %app_Row-Center-Center;
   height: 100%;
   width: 20%;

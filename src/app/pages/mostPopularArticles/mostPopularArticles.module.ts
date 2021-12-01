@@ -25,4 +25,4 @@ const routes: Routes = [{ path: '', component: MostPopularArticlesComponent }];
   ],
   exports: [SharedModule],
 })
-export class HomeModule {}
+export class MostPopularArticlesModule {}

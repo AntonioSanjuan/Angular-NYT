@@ -1,10 +1,10 @@
 import { Routes, RouterModule } from '@angular/router';
 import { AppLayoutComponent } from 'src/app/layouts/app-layout/app-layout.component';
 
-const default_route = 'mostPopularArticles';
+const defaultRoute = 'mostPopularArticles';
 
 export const routes: Routes = [
-  { path: '', redirectTo: default_route, pathMatch: 'full' },
+  { path: '', redirectTo: defaultRoute, pathMatch: 'full' },
   {
     path: '',
     component: AppLayoutComponent,
@@ -14,11 +14,22 @@ export const routes: Routes = [
         loadChildren: () =>
           import(
             '../../pages/mostPopularArticles/mostPopularArticles.module'
-          ).then((m) => m.HomeModule),
+          ).then((m) => m.MostPopularArticlesModule),
       },
     ],
   },
-  { path: '**', redirectTo: default_route },
+  {
+    path: '',
+    component: AppLayoutComponent,
+    children: [
+      {
+        path: 'login',
+        loadChildren: () =>
+          import('../../pages/login/login.module').then((m) => m.LoginModule),
+      },
+    ],
+  },
+  { path: '**', redirectTo: defaultRoute },
 ];
 
 export const APP_ROUTES = RouterModule.forRoot(routes, { useHash: true });

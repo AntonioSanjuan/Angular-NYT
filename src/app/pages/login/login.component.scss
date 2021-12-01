@@ -1,0 +1,6 @@
+@import "./../../../flex-styles.scss";
+
+.Login_MainContainer {
+  @extend %app_Col-Center-Center;
+  height: inherit;
+}

@@ -5,7 +5,7 @@ import { CoreModule } from 'src/app/modules/core/core.module';
 import { NYTMostPopularService } from 'src/app/services/NYT-data-supplier/most-popular/nyt-most-popular.service';
 import { NYTMostPopularServiceMock } from 'src/app/services/NYT-data-supplier/most-popular/nyt-most-popular.service.mock';
 import { MostPopularArticlesComponent } from './mostPopularArticles.component';
-import { HomeModule } from './mostPopularArticles.module';
+import { MostPopularArticlesModule } from './mostPopularArticles.module';
 import { Store } from '@ngrx/store';
 import { StoreMock } from 'src/app/services/state/utils/store.mock';
 import { Subject } from 'rxjs';
@@ -16,7 +16,7 @@ describe('MostPopularArticlesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CoreModule, HomeModule],
+      imports: [CoreModule, MostPopularArticlesModule],
       providers: [
         { provide: NYTMostPopularService, useValue: NYTMostPopularServiceMock },
         { provide: Store, useValue: StoreMock },
@@ -48,7 +48,7 @@ describe('MostPopularArticlesComponent', () => {
   });
 
   it('MostPopularArticlesComponent initially must save mostPopularViewedArticles first page in the store service', () => {
-    //spy
+    // spy
     const stateSpy = jest.spyOn(StoreMock, 'dispatch');
 
     const sut = {
@@ -59,7 +59,7 @@ describe('MostPopularArticlesComponent', () => {
       .spyOn(NYTMostPopularServiceMock, 'getMostPopularViewedArticles')
       .mockResolvedValue(sut);
 
-    fixture.detectChanges;
+    fixture.detectChanges();
     component.ngOnInit().then(() => {
       expect(component.nytMostPopularViewedArticles).toEqual(sut);
       expect(stateSpy).toHaveBeenCalled();

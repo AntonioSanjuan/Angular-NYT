@@ -5,9 +5,9 @@
 
 html, body { height: 100%; }
 
-body { 
-  margin: 0; 
-  font-family: Arial, sans-serif; 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
   background-color: colors.$app-content-background-color;
 }
 
@@ -36,9 +36,4 @@ p {
   50%{
       background-position: left;
   }
-}
-
-.app-primary-button {
-  color: colors.$font-color;
-  background-color: colors.$primary-color;
 }

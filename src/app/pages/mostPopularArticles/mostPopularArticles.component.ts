@@ -12,7 +12,7 @@ enum PeriodOfTimes {
   Monthly = 30,
 }
 @Component({
-  selector: 'app-mostPopularArticles',
+  selector: 'app-most-popular-articles',
   templateUrl: './mostPopularArticles.component.html',
   styleUrls: ['./mostPopularArticles.component.scss'],
 })
@@ -29,10 +29,10 @@ export class MostPopularArticlesComponent implements OnInit {
     private store: Store<AppDataState>
   ) {}
 
-  async ngOnInit() {
+  async ngOnInit(): Promise<void> {
     this.store
       .pipe(select(selectMostPopularViewedArticles))
-      .subscribe((response: any) => {
+      .subscribe((response: MostPopularViewedArticlesResponseDto) => {
         this.nytMostPopularViewedArticles = response;
       });
     await this.fetchData();
@@ -54,7 +54,7 @@ export class MostPopularArticlesComponent implements OnInit {
     this.storeData();
   }
 
-  private addEmptyArticle() {
+  private addEmptyArticle(): void {
     if (this.nytMostPopularViewedArticles.results) {
       this.nytMostPopularViewedArticles.results.unshift(undefined);
     }

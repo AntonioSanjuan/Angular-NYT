@@ -23,7 +23,7 @@ export class DeviceService {
     return this.mostPopularViewedArticlesObj$.asObservable();
   }
 
-  private emitScrollOnBottom() {
+  private emitScrollOnBottom(): void {
     this.mostPopularViewedArticlesObj$.next();
   }
 }

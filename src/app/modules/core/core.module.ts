@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RequestAuthInterceptor } from 'src/app/interceptors/httpAuthorization.interceptor';
 import { StoreModule } from '@ngrx/store';
 
-//Core modules
+// Core modules
 const modules = [BrowserModule, BrowserAnimationsModule, HttpClientModule];
 
 @NgModule({

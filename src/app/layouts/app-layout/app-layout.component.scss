@@ -1,34 +1,22 @@
 @use './../../../sizes.scss';
-// @import './../../../flex-styles.scss';
+@import './../../../flex-styles.scss';
 
 .AppLayout_MainContainer {
-  // @include app_Col-Start-Center;
-  flex-direction: column;
-  box-sizing: border-box;
-  display: flex;
-  place-content: flex-start;
-  align-items: center;
+  @extend %app_Col-Start-Center;
 
   height: 100%;
 }
 .AppLayout_HeaderContainer {
-  flex-direction: column;
-  box-sizing: border-box;
-  display: flex;
-  place-content: flex-start;
-  align-items: center;
+  @extend %app_Col-Start-Center;
 
   min-height: sizes.$app-topnav-desktop-height;
   height: sizes.$app-topnav-desktop-height;
 }
 
 .AppLayout_ContentContainer {
-  // @include app-Col-Start-Center;
-  flex-direction: column;
-  box-sizing: border-box;
-  display: flex;
-  place-content: flex-start;
-  align-items: center;
+  @extend %app_Col-Start-Center;
+
+  min-height: calc(100vh - #{sizes.$app-topnav-desktop-height});
 }
 
 /* Smartphones (portrait and landscape) ----------- */
@@ -44,23 +32,11 @@
   .AppLayout_ContentContainer {
     order: 1;
 
-    padding-bottom: sizes.$app-topnav-mobile-height;
+    min-height: calc(100vh - #{sizes.$app-topnav-mobile-height});
+
   }
 }
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .AppLayout_HeaderContainer {
-    order: 2;
-
-    min-height: sizes.$app-topnav-mobile-height;
-    height: sizes.$app-topnav-mobile-height;
-    position: fixed;
-    bottom: 0;
-  }
-  .AppLayout_ContentContainer {
-    order: 1;
-
-    padding-bottom: sizes.$app-topnav-mobile-height;
-  }
 }

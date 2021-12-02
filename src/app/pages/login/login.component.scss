@@ -1,6 +1,36 @@
+@use './../../../colors.scss';
+
 @import "./../../../flex-styles.scss";
+
+:host {
+  width: 100%;
+  height: 100%;
+}
 
 .Login_MainContainer {
   @extend %app_Col-Center-Center;
   height: inherit;
+}
+
+.Login_CardContainer {
+  form > div {
+    padding-bottom: 10px;
+  }
+  width: 300px;
+  padding:25px;
+
+  border-radius: 1vh;
+  background-color: colors.$app-card-background-color;
+}
+
+.Login_Logo {
+  padding-bottom: 20px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.Login_ActionContainer {
+  padding-top: 30px;
 }

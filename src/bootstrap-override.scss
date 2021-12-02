@@ -1,5 +1,7 @@
 
-.form-select:focus {
+.form-select:focus,
+.form-control:focus {
     border-color: inherit;
     box-shadow: none;
 }
+

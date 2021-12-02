@@ -1,3 +1,20 @@
 <div class="Login_MainContainer">
-  <p>login works!</p>
+  <div class="Login_CardContainer">
+    <div class="Login_Logo">
+      <img src="./../../../assets/images/Logo.png">
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="form-floating">
+        <input type="email"  formControlName="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email</label>
+      </div>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" placeholder="****">
+        <label for="floatingInput">Password</label>
+      </div>
+      <div class="Login_ActionContainer">
+          <button class="btn btn-primary w-100"type="submit" [disabled]="!loginForm.valid">Login</button>
+      </div>
+  </form>
+  </div>
 </div>

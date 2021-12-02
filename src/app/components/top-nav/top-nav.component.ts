@@ -12,4 +12,8 @@ export class TopNavComponent {
   public goToLogin(): void {
     this.routerService.navigate(['login']);
   }
+
+  public goToMainView(): void {
+    this.routerService.navigate(['']);
+  }
 }

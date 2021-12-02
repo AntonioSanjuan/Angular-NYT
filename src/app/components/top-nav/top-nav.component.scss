@@ -1,3 +1,4 @@
+@use './../../../colors.scss';
 @import "./../../../flex-styles.scss";
 
 :host {
@@ -17,15 +18,28 @@
 
   height: inherit;
   width: 80%;
-  border-bottom-color: black;
+  border-color: black;
   border-bottom-width: 2px;
   border-bottom-style: ridge;
 }
 
 .TopNav_Centercontainer {
+  @extend %app_Col-Center-Center;
+
+  cursor: pointer;
   height: 100%;
   width: 20%;
   text-align: center;
+
+  img {
+    height: 100%;
+    width: 100%;
+    min-width: 180px;
+  }
+
+  svg {
+    display: none
+  }
 }
 
 .TopNav_Leftcontainer,
@@ -40,5 +54,31 @@
 }
 
 .TopNav_Leftcontainer {
-  place-content: space-around;
+  place-content: flex-start;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .TopNav_Maincontainer {
+    background-color: colors.$app-topnav-mobile-background;
+  }
+
+  .TopNav_Centercontainer {
+    img { display: none; }
+    svg {
+      display: inherit;
+      color: colors.$app-card-background-color
+    }
+  }
+
+  .TopNav_Subcontainer {
+    width: 100%;
+  }
+
+  .TopNav_Subcontainer {
+    border-bottom-style: none;
+    border-top-style: ridge;
+
+    border-bottom-width: 0px;
+    border-top-width: 2px;
+  }
 }

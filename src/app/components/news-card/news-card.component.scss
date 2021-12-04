@@ -1,3 +1,4 @@
+@use './../../../colors.scss';
 @import "./../../../flex-styles.scss";
 
 :host {
@@ -6,30 +7,39 @@
 .NewsCard_MainContainer {
   @extend %app_Col-Start-Center;
 
-  background-color: #f7f7f7;
+  background-color: colors.$app-card-background-color;
+  border-radius: 5px;
   padding: 15px;
 
-  border-width: 5px;
-  border-style: ridge;
-
-  width: 100%;
-  max-width: 405px;
-  min-width: 405px;
-  height: 600px;
+  width: 300px;
+  height: 500px;
+  overflow: hidden;
 }
 
 .NewsCard_ImageContainer {
-  height: 300px;
+  height: 240px;
+  min-height:240px;
 }
 
 .NewsCard_CategoryContainer {
   @extend %app_Row-Between-Center;
-  margin: 2%;
+  margin: 2% 2% 5% 2%;
 }
 
 .NewsCard_CategoryByLine,
 .NewsCard_CategorySection {
   width: fit-content;
+}
+
+.NewsCard_CategoryByLine {
+  width: 60%;
+
+  p {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
 }
 
 .NewsCard_Image {
@@ -42,6 +52,15 @@
 .NewsCard_TextContainer {
   margin-top: 5%;
 }
+
+.NewsCard_TextContainer:before {
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  background:linear-gradient(transparent 10px, white);
+}
+
 
 /* skeleton feed -----------*/
 .NewsCard_CategoryByLine.skeleton {

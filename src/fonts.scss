@@ -2,25 +2,31 @@ $big-fontColor: #2b2b2b;
 $small-fontColor: #888;
 $normal-fontColor: #555;
 
+.app_font_xs {
+  color: $small-fontColor;
 
-.small_font {
+  font-weight: 700;
+  font-size: 10px;
+}
+
+.app_font_s {
     color: $small-fontColor;
 
     font-weight: 700;
     font-size: 14px;
 }
 
-.normal_font {
+.app_font_m {
     color: $normal-fontColor;
 
     font-size: 16px;
-    
+
 }
 
-.big_font {
+.bapp_font_l {
     color: $big-fontColor;
 
     font-weight: 700;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 1.2em;
 }

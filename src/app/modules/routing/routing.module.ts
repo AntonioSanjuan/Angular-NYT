@@ -1,3 +1,4 @@
+import { AppLoginLayoutComponent } from './../../layouts/app-login-layout/app-login-layout.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AppLayoutComponent } from 'src/app/layouts/app-layout/app-layout.component';
 
@@ -20,7 +21,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    component: AppLayoutComponent,
+    component: AppLoginLayoutComponent,
     children: [
       {
         path: 'login',

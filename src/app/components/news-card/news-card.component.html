@@ -15,23 +15,23 @@
   </div>
   <div class="NewsCard_CategoryContainer">
     <div class="NewsCard_CategoryByLine" [appSkeleton]="hasSkeleton">
-      <p *ngIf="!hasSkeleton" class="small_font">
+      <p *ngIf="!hasSkeleton" class="app_font_xs">
         {{ article?.byline }}
       </p>
     </div>
     <div class="NewsCard_CategorySection" [appSkeleton]="hasSkeleton">
-      <p *ngIf="!hasSkeleton" class="small_font">
+      <p *ngIf="!hasSkeleton" class="app_font_xs">
         {{ article?.section }}
       </p>
     </div>
   </div>
   <div *ngIf="!hasSkeleton; else titleSkeleton">
-    <p class="big_font">
+    <p class="bapp_font_l">
       {{ article?.title }}
     </p>
   </div>
   <div *ngIf="!hasSkeleton; else textSkeleton" class="NewsCard_TextContainer">
-    <p class="normal_font">
+    <p class="app_font_s">
       {{ article?.abstract }}
     </p>
   </div>

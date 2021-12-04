@@ -14,7 +14,7 @@
         <path d="M8.5 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
       </svg>    </div>
     <div class="TopNav_Rightcontainer">
-      <button (click)="goToLogin()" type="button" class="btn btn-primary">Login</button>
+      <button (click)="goToLogin()" [hidden]="!loginButton" type="button" class="btn btn-primary">Login</button>
     </div>
   </div>
 </div>

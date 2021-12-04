@@ -1,5 +1,6 @@
-import { AppUserState } from './appUsera.state';
+import { AppUserState } from './appUser.state';
 
 export const appUserInitialState: AppUserState = {
-  isAnonymous: true,
+  isLogged: false,
+  userData: undefined,
 };

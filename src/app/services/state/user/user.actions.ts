@@ -1,12 +1,21 @@
 import { createAction, props } from '@ngrx/store';
+import { UserResponseDto } from 'src/app/models/dtos/user/userData.model';
 
 export enum AppUserActionTypes {
   SetIsAnonymous = '[User] Set AppUser isAnonymous',
+  SetUser = '[User] Set User',
 }
 
-export const setIsAnonymousAction = createAction(
+export const setIsLoggedAction = createAction(
   AppUserActionTypes.SetIsAnonymous,
   props<{
-    isAnonymous_newState: boolean;
+    isLogged_newState: boolean;
+  }>()
+);
+
+export const setUser = createAction(
+  AppUserActionTypes.SetUser,
+  props<{
+    user_newState: UserResponseDto;
   }>()
 );

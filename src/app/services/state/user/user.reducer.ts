@@ -1,16 +1,25 @@
-import { setIsAnonymousAction } from './user.actions';
+import { setIsLoggedAction, setUser } from './user.actions';
 import { createReducer, on } from '@ngrx/store';
 import { appUserInitialState } from './models/appUser.initialState';
-import { AppUserState } from './models/appUsera.state';
+import { AppUserState } from './models/appUser.state';
 
 export const featureUser = 'user';
 
 export const UserReducer = createReducer<AppUserState>(
   appUserInitialState,
-  on(setIsAnonymousAction, (state, action): AppUserState => {
+
+  on(setIsLoggedAction, (state, action): AppUserState => {
     return {
       ...state,
-      isAnonymous: action.isAnonymous_newState,
+      isLogged: action.isLogged_newState,
+    };
+  }),
+
+  on(setUser, (state, action): AppUserState => {
+    return {
+      ...state,
+      isLogged: true,
+      userData: action.user_newState,
     };
   })
 );

@@ -1,5 +1,5 @@
-import { AppDataState } from './data/data.actions';
-import { AppUserState } from './user/models/appUsera.state';
+import { AppDataState } from './data/models/appData.state';
+import { AppUserState } from './user/models/appUser.state';
 
 export interface AppState {
   user: AppUserState;

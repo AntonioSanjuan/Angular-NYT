@@ -25,12 +25,12 @@
       </p>
     </div>
   </div>
-  <div *ngIf="!hasSkeleton; else titleSkeleton">
-    <p class="bapp_font_l">
+  <div class="NewsCard_TitleContainer" *ngIf="!hasSkeleton; else titleSkeleton">
+    <p class="app_font_l">
       {{ article?.title }}
     </p>
   </div>
-  <div *ngIf="!hasSkeleton; else textSkeleton" class="NewsCard_TextContainer">
+  <div class="NewsCard_TextContainer" *ngIf="!hasSkeleton; else textSkeleton">
     <p class="app_font_s">
       {{ article?.abstract }}
     </p>
@@ -38,7 +38,7 @@
 </div>
 
 <ng-template #titleSkeleton>
-  <div class="NewsCard_TextSkeletonContainer">
+  <div class="NewsCard_TitleSkeletonContainer">
     <div
       class="NewsCard_TextSkeleton"
       [appSkeleton]="hasSkeleton"

@@ -49,18 +49,13 @@
   object-position: center;
 }
 
+.NewsCard_TitleContainer {
+  font-weight: 700;
+}
+
 .NewsCard_TextContainer {
   margin-top: 5%;
 }
-
-.NewsCard_TextContainer:before {
-  content:'';
-  position:absolute;
-  left:0;
-  top:0;
-  background:linear-gradient(transparent 10px, white);
-}
-
 
 /* skeleton feed -----------*/
 .NewsCard_CategoryByLine.skeleton {
@@ -76,10 +71,19 @@
 }
 
 /* Skeleton template -----------*/
+.NewsCard_TitleSkeletonContainer,
 .NewsCard_TextSkeletonContainer {
   @extend %app_Row-Between-Center;
   flex-wrap: wrap;
-  margin-top: 10%;
+  margin-top: 3%;
+}
+
+.NewsCard_TitleSkeletonContainer {
+  margin-top: 3%;
+}
+
+.NewsCard_TextSkeletonContainer {
+  margin-top: 11%;
 }
 
 .NewsCard_TextSkeleton {
@@ -93,7 +97,6 @@
     width: 100%;
   }
   .NewsCard_MainContainer {
-    height: fit-content;
     min-width: 100%;
   }
 }

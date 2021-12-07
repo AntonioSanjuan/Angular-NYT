@@ -1,3 +1,4 @@
+@use './../../../sizes.scss';
 @import "./../../../flex-styles.scss";
 
 .MostPopularArticles_MainContainer {
@@ -6,7 +7,7 @@
 }
 
 .MostPopularArticles_SubContainer {
-  width: 80%;
+  width: sizes.$app-width;
 }
 
 .MostPopularArticles_FilterContainer {

@@ -1,4 +1,5 @@
 @use './../../../colors.scss';
+@use './../../../sizes.scss';
 @import "./../../../flex-styles.scss";
 
 :host {
@@ -18,7 +19,7 @@
   @extend %app_Row-Between-Center;
 
   height: inherit;
-  width: 80%;
+  width: sizes.$app-width;
   border-color: black;
   border-bottom-width: 2px;
   border-bottom-style: ridge;

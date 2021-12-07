@@ -1,32 +1,32 @@
-.sidenav_MainContainer {
+@use './../../../sizes.scss';
+@import './../../../flex-styles.scss';
 
-  flex-direction: row;
-  box-sizing: border-box;
-  display: flex;
-  place-content: flex-start;
-  align-items: center;
-  flex: 1 1 100%;
+.sidenav_MainContainer {
+  @extend %app_Row-Start-Center;
+
   height: 100%;
 }
 
 .sidenav_NavContainer {
-  height: 100%;
-  width: 200px;
+  position: absolute;
+  top: sizes.$app-topnav-desktop-height;
+  left: 0;
 
-  box-sizing: border-box;
-  display: flex;
-  place-content: flex-start;
-  align-items: flex-start;
-  height: 100%;
+  height: calc(100% - #{sizes.$app-topnav-desktop-height});
+  width: sizes.$app-sidenav-desktop-width;
   padding: 1%;
+  background-color: red;
 }
 
 .sidenav_ContentContainer {
+  @extend %app_Row-Start-Center;
 
-  box-sizing: border-box;
-  display: flex;
-  place-content: flex-start;
-  align-items: center;
-  flex: 1 1 85%;
   height: 100%;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .sidenav_NavContainer {
+    top: 0;
+    height: calc(100% - #{sizes.$app-topnav-mobile-height});
+  }
 }

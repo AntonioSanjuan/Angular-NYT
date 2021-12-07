@@ -5,9 +5,14 @@
   @extend %app_Col-Start-Center;
 
   height: 100%;
+  overflow-x: hidden;
 }
 .AppLayout_HeaderContainer {
   @extend %app_Col-Start-Center;
+
+  position: fixed;
+  top: 0;
+  bottom: auto;
 
   min-height: sizes.$app-topnav-desktop-height;
   height: sizes.$app-topnav-desktop-height;
@@ -16,7 +21,7 @@
 .AppLayout_ContentContainer {
   @extend %app_Col-Start-Center;
 
-  min-height: calc(100vh - #{sizes.$app-topnav-desktop-height});
+  margin-top: sizes.$app-topnav-desktop-height;
 }
 
 /* Smartphones (portrait and landscape) ----------- */
@@ -24,15 +29,17 @@
   .AppLayout_HeaderContainer {
     order: 2;
 
+    position: fixed;
+    top: auto;
+    bottom: 0;
+
     min-height: sizes.$app-topnav-mobile-height;
     height: sizes.$app-topnav-mobile-height;
-    position: fixed;
-    bottom: 0;
+
   }
   .AppLayout_ContentContainer {
     order: 1;
-
-    min-height: calc(100vh - #{sizes.$app-topnav-mobile-height});
+    margin-top: 0;
 
   }
 }

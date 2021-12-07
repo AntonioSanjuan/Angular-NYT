@@ -14,6 +14,14 @@
   align-items: center;
 }
 
+%app_Row-Start-Start {
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  place-content: flex-start;
+  align-items: flex-start;
+}
+
 %app_Row-Center-Center {
   flex-direction: row;
   box-sizing: border-box;
@@ -29,4 +37,13 @@
   place-content: space-between;
   align-items: center;
 }
+
+%app_Row-Start-Center {
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  place-content: flex-start;
+  align-items: center;
+}
+
 

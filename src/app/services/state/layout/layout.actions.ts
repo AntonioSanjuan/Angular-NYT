@@ -1,12 +1,9 @@
-import { createAction, props } from '@ngrx/store';
+import { createAction } from '@ngrx/store';
 
 export enum AppLayoutActionTypes {
-  SetIsSideNavOpened = '[Layout] Set AppLayout isSideNavOpened',
+  SwitchIsSideNavOpened = '[Layout] Switch AppLayout isSideNavOpened',
 }
 
-export const setIsSidenavOpenedAction = createAction(
-  AppLayoutActionTypes.SetIsSideNavOpened,
-  props<{
-    isSideNavOpened_newState: boolean;
-  }>()
+export const switchIsSidenavOpenedAction = createAction(
+  AppLayoutActionTypes.SwitchIsSideNavOpened
 );

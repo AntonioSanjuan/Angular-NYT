@@ -9,6 +9,7 @@
 .TopNav_Maincontainer {
   @extend %app_Col-Center-Center;
 
+  background-color: colors.$app-content-background-color;
   height: 100%;
   padding: 0% 4%;
 }

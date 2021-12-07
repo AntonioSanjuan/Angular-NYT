@@ -1,8 +1,10 @@
+import { AppLayoutState } from 'src/app/services/state/layout/models/appLayout.state';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { AppUserState } from 'src/app/services/state/user/models/appUser.state';
 import { selectUserIsLogged } from 'src/app/services/state/user/user.selectors';
+import { switchIsSidenavOpenedAction } from 'src/app/services/state/layout/layout.actions';
 
 @Component({
   selector: 'app-top-nav',
@@ -15,13 +17,14 @@ export class TopNavComponent implements OnInit {
 
   constructor(
     private routerService: Router,
-    private store: Store<AppUserState>
+    private userStore: Store<AppUserState>,
+    private layoutStore: Store<AppLayoutState>
   ) {}
 
   ngOnInit(): void {
     this.loginButtonHidden = !this.displayLoginButton;
 
-    this.store
+    this.userStore
       .pipe(select(selectUserIsLogged))
       .subscribe((isLogged: boolean) => {
         if (this.displayLoginButton) {
@@ -36,5 +39,9 @@ export class TopNavComponent implements OnInit {
 
   public goToMainView(): void {
     this.routerService.navigate(['']);
+  }
+
+  public openSettings(): void {
+    this.layoutStore.dispatch(switchIsSidenavOpenedAction());
   }
 }

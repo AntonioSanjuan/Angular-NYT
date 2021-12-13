@@ -5,7 +5,6 @@
   @extend %app_Col-Start-Center;
 
   height: 100%;
-  overflow-x: hidden
 }
 
 .AppLayout_HeaderContainer {
@@ -43,12 +42,15 @@
 .AppLayout_Content {
   @extend %app_Row-Start-Center;
 
-  min-width: 100vw;
-  width: 100vw;
+  min-width: 100%;
+  width: 100%;
 }
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .AppLayout_MainContainer {
+    overflow-x: hidden
+  }
   .AppLayout_HeaderContainer {
     order: 2;
 
@@ -63,7 +65,10 @@
   .AppLayout_ContentContainer {
     order: 1;
     margin-top: 0;
+  }
 
+  .AppLayout_Content {
+    place-content: center;
   }
 }
 

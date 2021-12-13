@@ -12,12 +12,14 @@ export const slideAnimation = trigger('slideInOut', [
     SidenavStatus.Opened,
     style({
       transform: 'translateX(0%)',
+      marginLeft: '0px',
     })
   ),
   state(
     SidenavStatus.Closed,
     style({
       transform: 'translateX(-100%)',
+      marginLeft: '-200px',
     })
   ),
   transition(

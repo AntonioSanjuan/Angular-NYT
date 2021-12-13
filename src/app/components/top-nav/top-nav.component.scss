@@ -12,7 +12,6 @@
 
   background-color: colors.$app-content-background-color;
   height: 100%;
-  padding: 0% 4%;
 }
 
 .TopNav_Subcontainer {
@@ -72,14 +71,12 @@
   }
 
   .TopNav_Subcontainer {
-    width: 100%;
-  }
-
-  .TopNav_Subcontainer {
     border-bottom-style: none;
     border-top-style: ridge;
 
     border-bottom-width: 0px;
     border-top-width: 2px;
+
+    width: 95%;
   }
 }

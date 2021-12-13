@@ -3,8 +3,11 @@
     <app-top-nav></app-top-nav>
   </div>
   <div class="AppLayout_ContentContainer">
-    <app-side-nav>
+    <div class="AppLayout_ContentSidenav" [@slideInOut]="isSideNavOpened">
+      <app-side-nav></app-side-nav>
+    </div>
+    <div class="AppLayout_Content">
       <router-outlet></router-outlet>
-    </app-side-nav>
+    </div>
   </div>
 </div>

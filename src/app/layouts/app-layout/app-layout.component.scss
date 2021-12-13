@@ -5,8 +5,9 @@
   @extend %app_Col-Start-Center;
 
   height: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden
 }
+
 .AppLayout_HeaderContainer {
   @extend %app_Col-Start-Center;
 
@@ -16,12 +17,34 @@
 
   min-height: sizes.$app-topnav-desktop-height;
   height: sizes.$app-topnav-desktop-height;
+
+  z-index: 9999;
 }
 
 .AppLayout_ContentContainer {
-  @extend %app_Col-Start-Center;
+  @extend %app_Row-Start-Center;
 
   margin-top: sizes.$app-topnav-desktop-height;
+}
+
+.AppLayout_ContentSidenav {
+  height: 100%;
+  width: sizes.$app-sidenav-desktop-width;
+  min-width: sizes.$app-sidenav-desktop-width;
+  background-color: yellow;
+}
+
+.AppLayout_nose {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.AppLayout_Content {
+  @extend %app_Row-Start-Center;
+
+  min-width: 100vw;
+  width: 100vw;
 }
 
 /* Smartphones (portrait and landscape) ----------- */

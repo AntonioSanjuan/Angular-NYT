@@ -12,8 +12,6 @@
   top: sizes.$app-topnav-desktop-height;
   left: 0;
 
-  height: calc(100% - #{sizes.$app-topnav-desktop-height});
-  width: sizes.$app-sidenav-desktop-width;
   padding: 1%;
   background-color: red;
 }

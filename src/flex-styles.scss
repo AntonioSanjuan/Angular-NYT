@@ -14,6 +14,14 @@
   align-items: center;
 }
 
+%app_Col-Center-Start {
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  place-content: center;
+  align-items: flex-start;
+}
+
 %app_Row-Start-Start {
   flex-direction: row;
   box-sizing: border-box;

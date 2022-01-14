@@ -11,8 +11,10 @@ import {
   appLayoutData,
   LayoutReducer,
 } from 'src/app/services/state/layout/Layout.reducer';
+import { SectionComponent } from 'src/app/components/side-nav/components/section/section.component';
+import { ProfileSectionComponent } from 'src/app/components/side-nav/components/profile-section/profile-section.component';
 
-const declarations = [SideNavComponent];
+const declarations = [SideNavComponent, ProfileSectionComponent, SectionComponent];
 @NgModule({
   declarations: [...declarations],
   imports: [

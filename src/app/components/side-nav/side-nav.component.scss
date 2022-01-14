@@ -2,18 +2,16 @@
 @import './../../../flex-styles.scss';
 
 .sidenav_MainContainer {
-  @extend %app_Row-Start-Center;
-
+  @extend %app_Row-Start-Start;
   height: 100%;
 }
 
 .sidenav_NavContainer {
-  position: absolute;
+  position: sticky;
   top: sizes.$app-topnav-desktop-height;
   left: 0;
 
-  padding: 1%;
-  background-color: red;
+  padding: 1% 5%;
 }
 
 .sidenav_ContentContainer {
@@ -22,9 +20,13 @@
   height: 100%;
 }
 
+.sidenav_ProfileSection {
+  height: 80px;
+  border-bottom: 1px solid;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .sidenav_NavContainer {
     top: 0;
-    height: calc(100% - #{sizes.$app-topnav-mobile-height});
   }
 }

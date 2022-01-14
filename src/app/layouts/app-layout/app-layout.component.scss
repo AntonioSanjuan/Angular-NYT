@@ -1,4 +1,5 @@
 @use './../../../sizes.scss';
+@use './../../../colors.scss';
 @import './../../../flex-styles.scss';
 
 .AppLayout_MainContainer {
@@ -30,7 +31,7 @@
   height: 100%;
   width: sizes.$app-sidenav-desktop-width;
   min-width: sizes.$app-sidenav-desktop-width;
-  background-color: yellow;
+  background-color: colors.$app-sidenav-background-color;
 }
 
 .AppLayout_nose {

@@ -1,0 +1,38 @@
+@import './../../../../../flex-styles.scss';
+.ProfileSection_MainContainer {
+    @extend %app_Row-Start-Start;
+    height: 100%;
+
+    padding: 1%;
+
+}
+
+.ProfileSection_ImageContainer, 
+.ProfileSection_DataContainer {
+    height: 100%;
+}
+
+.ProfileSection_ImageContainer {
+    @extend %app_Col-Center-Center;
+    width: 35%;
+
+    svg {
+        height: 100%;
+        width: 50px;
+    }
+}
+
+.ProfileSection_DataContainer {
+    @extend %app_Col-Center-Start;
+
+    padding-left: 10px;
+    p {
+        margin-bottom: 6px;
+    }
+    a {
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+}
+

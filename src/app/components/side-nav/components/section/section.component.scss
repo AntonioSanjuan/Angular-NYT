@@ -1,6 +1,6 @@
 @use './../../../../../colors.scss';
 @import './../../../../../flex-styles.scss';
-.ProfileSection_MainContainer {
+.Section_MainContainer {
     @extend %app_Row-Start-Start;
     height: 100%;
 
@@ -8,12 +8,12 @@
 
 }
 
-.ProfileSection_ImageContainer, 
-.ProfileSection_DataContainer {
+.Section_ImageContainer, 
+.Section_DataContainer {
     height: 100%;
 }
 
-.ProfileSection_ImageContainer {
+.Section_ImageContainer {
     @extend %app_Col-Center-Center;
     width: 35%;
 
@@ -23,17 +23,12 @@
     }
 }
 
-.ProfileSection_DataContainer {
+.Section_DataContainer {
     @extend %app_Col-Center-Start;
 
     padding-left: 10px;
     p {
-        margin-bottom: 6px;
+        margin-bottom: 0px;
     }
-    a {
-        cursor: pointer;
-        text-decoration: none;
-    }
-
 }
 

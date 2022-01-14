@@ -1,4 +1,5 @@
 @use './../../../sizes.scss';
+@use './../../../colors.scss';
 @import './../../../flex-styles.scss';
 
 .sidenav_MainContainer {
@@ -23,6 +24,13 @@
 .sidenav_ProfileSection {
   height: 80px;
   border-bottom: 1px solid;
+}
+
+.sidenav_Section {
+  height: 50px;
+  &:hover {
+    background-color: colors.$app-sidenav-section-hover-color;
+  }
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {

@@ -3,7 +3,8 @@
 @import './../../../flex-styles.scss';
 
 .AppLayout_MainContainer {
-  @extend %app_Col-Start-Center;
+  @extend %app_Col-Start-End;
+  overflow-x: hidden;
 
   height: 100%;
 }
@@ -50,7 +51,7 @@
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .AppLayout_MainContainer {
-    overflow-x: hidden
+    // overflow-x: hidden;
   }
   .AppLayout_HeaderContainer {
     order: 2;

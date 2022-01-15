@@ -6,6 +6,14 @@
   align-items: center;
 }
 
+%app_Col-Start-End {
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  place-content: flex-start;
+  align-items: flex-end;
+}
+
 %app_Col-Center-Center {
   flex-direction: column;
   box-sizing: border-box;

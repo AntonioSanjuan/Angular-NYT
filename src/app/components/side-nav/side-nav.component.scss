@@ -9,6 +9,7 @@
 
 .sidenav_NavContainer {
   position: sticky;
+  height: calc(100vh - #{sizes.$app-topnav-desktop-height});
   top: sizes.$app-topnav-desktop-height;
   left: 0;
 
@@ -26,15 +27,22 @@
   border-bottom: 1px solid;
 }
 
-.sidenav_Section {
+.sidenav_Section,
+.sidenav_FooterSection {
   height: 50px;
   &:hover {
     background-color: colors.$app-sidenav-section-hover-color;
   }
 }
 
+.sidenav_FooterSection {
+  border-top: 1px solid;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .sidenav_NavContainer {
     top: 0;
+    height: calc(100vh - #{sizes.$app-topnav-mobile-height});
+
   }
 }

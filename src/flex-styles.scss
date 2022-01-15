@@ -30,6 +30,14 @@
   align-items: flex-start;
 }
 
+%app_Col-Between-Center {
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  place-content: space-between;
+  align-items: center;
+}
+
 %app_Row-Start-Start {
   flex-direction: row;
   box-sizing: border-box;

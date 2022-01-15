@@ -6,7 +6,7 @@
     <div class="AppLayout_ContentSidenav" [@slideInOut]="isSideNavOpened">
       <app-side-nav></app-side-nav>
     </div>
-    <div class="AppLayout_Content">
+    <div class="AppLayout_Content" [@blurInOut]="isSideNavOpened">
       <router-outlet></router-outlet>
     </div>
   </div>

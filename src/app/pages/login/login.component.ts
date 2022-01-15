@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   public login(): void {
     const user = {
-      userName: 'userTest',
+      userName: 'Tony',
     } as UserResponseDto;
 
     this.store.dispatch(

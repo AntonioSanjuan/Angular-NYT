@@ -1,6 +1,7 @@
 $big-fontColor: #2b2b2b;
 $small-fontColor: #888;
-$normal-fontColor: #555;
+$normal-fontColor: #545454;
+$error-fontColor: #dd1f1f;
 
 .app_font_xs {
   color: $small-fontColor;
@@ -14,9 +15,13 @@ $normal-fontColor: #555;
 
 .app_font_m {
     color: $normal-fontColor;
-
     font-size: 14px;
+}
 
+.app_font_error {
+    color: $error-fontColor;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .app_font_l {

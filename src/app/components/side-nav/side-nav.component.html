@@ -1,28 +1,41 @@
 <div class="sidenav_MainContainer">
   <div class="sidenav_NavContainer">
-    <div class="sidenav_ProfileSection">
-      <app-profile-section></app-profile-section>
-    </div>
-    <div class="sidenav_Section">
-      <app-section
-        [sectionName] = "'Most Popular Articles'"
-      >
-      <i class="bi bi-bar-chart-line-fill"></i>
-    </app-section>
-    </div>
-    <div class="sidenav_Section">
-      <app-section
-        [sectionName] = "'to-do'"
-      >
-        <i class="bi bi-clock-fill"></i>
+    <div>
+      <div class="sidenav_ProfileSection">
+        <app-profile-section
+        [isLogged]="isLogged">
+      </app-profile-section>
+      </div>
+      <div class="sidenav_Section">
+        <app-section
+          [sectionName] = "'Most Popular Articles'"
+        >
+        <i class="bi bi-bar-chart-line-fill"></i>
       </app-section>
+      </div>
+      <div class="sidenav_Section">
+        <app-section
+          [sectionName] = "'to-do'"
+        >
+          <i class="bi bi-clock-fill"></i>
+        </app-section>
+      </div>
     </div>
     <div class="sidenav_FooterSection">
-      <app-section
-        [sectionName] = "'Contact'"
-      >
-        <i class="bi bi-chat-left-dots-fill"></i>
-      </app-section>
+      <div class="sidenav_Section">
+        <app-section
+          [sectionName] = "'Contact'"
+        >
+          <i class="bi bi-chat-left-dots-fill"></i>
+        </app-section>
+      </div>
+      <div *ngIf="isLogged" (click)="logOut()" class="sidenav_Section" id="exitSection">
+        <app-section
+          [sectionName] = "'Exit'"
+        >
+          <i class="bi bi-box-arrow-right"></i>
+        </app-section>
+      </div>
     </div>
   </div>
 </div>

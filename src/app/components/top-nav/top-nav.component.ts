@@ -13,8 +13,8 @@ import { switchIsSidenavOpenedAction } from 'src/app/services/state/layout/layou
 })
 export class TopNavComponent implements OnInit {
   @Input() private readonly displayLoginButton = true;
+  @Input() public readonly displaySidenavButton = true;
   public loginButtonHidden: boolean;
-
   constructor(
     private routerService: Router,
     private userStore: Store<AppUserState>,

@@ -8,6 +8,7 @@
 }
 
 .sidenav_NavContainer {
+  @extend %app_Col-Between-Center;
   position: sticky;
   height: calc(100vh - #{sizes.$app-topnav-desktop-height});
   top: sizes.$app-topnav-desktop-height;
@@ -27,9 +28,9 @@
   border-bottom: 1px solid;
 }
 
-.sidenav_Section,
-.sidenav_FooterSection {
+.sidenav_Section {
   height: 50px;
+  cursor: pointer;
   &:hover {
     background-color: colors.$app-sidenav-section-hover-color;
   }
@@ -37,6 +38,10 @@
 
 .sidenav_FooterSection {
   border-top: 1px solid;
+
+  #exitSection {
+    color: red !important;
+  }
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {

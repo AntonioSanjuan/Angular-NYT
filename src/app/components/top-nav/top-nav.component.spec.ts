@@ -29,4 +29,26 @@ describe('TopNavComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('TopNavComponent openSettings() must navigate to login', () => {
+    // spy
+    const navigateSpy = jest.spyOn(RouterMock, 'navigate');
+    component.goToLogin()
+    expect(navigateSpy).toHaveBeenCalledWith(['login'])  });
+
+  it('TopNavComponent openSettings() must navigate to default route', () => {
+    // spy
+    const navigateSpy = jest.spyOn(RouterMock, 'navigate');
+    component.goToMainView()
+    expect(navigateSpy).toHaveBeenCalledWith([''])
+  });
+
+
+  it('TopNavComponent openSettings() must switch switchIsSidenavOpenedAction in the store service', () => {
+    // spy
+    const stateSpy = jest.spyOn(StoreMock, 'dispatch');
+
+    component.openSettings();
+    expect(stateSpy).toHaveBeenCalled();
+  });
 });

@@ -66,7 +66,7 @@ describe('MostPopularArticlesComponent', () => {
     });
   });
 
-  it('MostPopularArticlesComponent initially must save mostPopularViewedArticles$ subscription', () => {
+  it('MostPopularArticlesComponent initially must subscribe to selectMostPopularViewedArticles redux selector', () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const subject: Subject<MostPopularViewedArticlesResponseDto> =
       new Subject();

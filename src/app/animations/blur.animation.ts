@@ -17,7 +17,7 @@ import {
     state(
       SidenavStatus.Closed,
       style({
-        'backdrop-filter': 'blur(0px)'
+        'filter': 'blur(0px)'
       })
     ),
     transition(

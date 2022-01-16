@@ -13,7 +13,7 @@ export class AppLoginLayoutComponent implements OnInit {
   public isSideNavOpened: SidenavStatus;
 
   constructor(private store: Store<AppLayoutState>) {}
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.store
     .pipe(select(selectIsSideNavOpened))
     .subscribe((isSideNavOpened: boolean) => {

@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Store } from '@ngrx/store';
+import { Subject } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
-import { APP_ROUTES } from 'src/app/modules/routing/routing.module';
+import { SidenavStatus } from 'src/app/models/internal/sidebarStatus/sidebarStatus.model';
+import { StoreMock } from 'src/app/services/state/utils/store.mock';
 
 import { AppLayoutComponent } from './app-layout.component';
 
@@ -10,8 +13,10 @@ describe('AppLayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [],
-      imports: [AppModule, APP_ROUTES],
+      imports: [AppModule],
+      providers: [
+        { provide: Store, useValue: StoreMock },
+      ]
     }).compileComponents();
   });
 
@@ -23,5 +28,19 @@ describe('AppLayoutComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('AppLayoutComponent initially must subscribe to selectIsSideNavOpened redux selector', () => {
+    const sut = true;
+    const subject: Subject<boolean> = new Subject();
+  
+    jest.spyOn(StoreMock, 'pipe').mockReturnValue(subject.asObservable());
+  
+    component.ngOnInit().then(() => {
+      subject.next(sut);
+      fixture.detectChanges();
+
+      expect(component.isSideNavOpened).toEqual(SidenavStatus.Opened)
+    });
   });
 });

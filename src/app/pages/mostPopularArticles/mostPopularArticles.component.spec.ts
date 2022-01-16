@@ -34,7 +34,7 @@ describe('MostPopularArticlesComponent', () => {
   });
 
   it('MostPopularArticlesComponent initially must request mostPopularViewedArticles first page', () => {
-    const sut = 1;
+    const input = 1;
     // spy
     const fetchSpy = jest.spyOn(
       NYTMostPopularServiceMock,
@@ -43,7 +43,7 @@ describe('MostPopularArticlesComponent', () => {
     fixture.detectChanges();
 
     component.ngOnInit().then(() => {
-      expect(fetchSpy).toHaveBeenCalledWith(sut);
+      expect(fetchSpy).toHaveBeenCalledWith(input);
     });
   });
 
@@ -51,17 +51,17 @@ describe('MostPopularArticlesComponent', () => {
     // spy
     const stateSpy = jest.spyOn(StoreMock, 'dispatch');
 
-    const sut = {
+    const input = {
       results: Array(20).fill(undefined),
     } as MostPopularViewedArticlesResponseDto;
 
     jest
       .spyOn(NYTMostPopularServiceMock, 'getMostPopularViewedArticles')
-      .mockResolvedValue(sut);
+      .mockResolvedValue(input);
 
     fixture.detectChanges();
     component.ngOnInit().then(() => {
-      expect(component.nytMostPopularViewedArticles).toEqual(sut);
+      expect(component.nytMostPopularViewedArticles).toEqual(input);
       expect(stateSpy).toHaveBeenCalled();
     });
   });

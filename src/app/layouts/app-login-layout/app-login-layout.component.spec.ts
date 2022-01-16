@@ -31,13 +31,13 @@ describe('AppLoginLayoutComponent', () => {
   });
 
   it('AppLoginLayoutComponent initially must subscribe to selectIsSideNavOpened redux selector', () => {
-    const sut = true;
+    const input = true;
     const subject: Subject<boolean> = new Subject();
   
     jest.spyOn(StoreMock, 'pipe').mockReturnValue(subject.asObservable());
   
     component.ngOnInit().then(() => {
-      subject.next(sut);
+      subject.next(input);
       fixture.detectChanges();
 
       expect(component.isSideNavOpened).toEqual(SidenavStatus.Opened)

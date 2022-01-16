@@ -6,8 +6,6 @@ import {
   Medium,
   MostPopularViewedArticlesResponseContentDto,
 } from 'src/app/models/dtos/mostPopularViewedArticles/mostPopularViewedArticlesResponseDto.model';
-import { CoreModule } from 'src/app/modules/core/core.module';
-import { SharedModule } from 'src/app/modules/shared/shared.module';
 
 import { NewsCardComponent } from './news-card.component';
 
@@ -18,8 +16,6 @@ describe('NewsCardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [NewsCardComponent, SkeletonDirective],
-      imports: [CoreModule, SharedModule],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NewsCardComponent);
@@ -49,5 +45,29 @@ describe('NewsCardComponent', () => {
     component.article = articleWithImage;
     const sut = component.hasImage();
     expect(sut).toBeFalsy();
+  });
+
+  it('getImage() should return last image', () => {
+    const input = 'test_url'
+    component.article = {
+      media: [
+        {
+          'media-metadata' : [ 
+            {}, 
+            {}, 
+            {
+              url: input
+            }]
+        }
+      ]
+    } as MostPopularViewedArticlesResponseContentDto;
+    const sut = component.getImage();
+    expect(sut).toEqual(input)
+  });
+
+  it('articleImageLoaded() should set hasSkeleton into true', () => {
+    expect(component.hasSkeleton).toBeFalsy;
+    component.articleImageLoaded();
+    expect(component.hasSkeleton).toBeTruthy;
   });
 });

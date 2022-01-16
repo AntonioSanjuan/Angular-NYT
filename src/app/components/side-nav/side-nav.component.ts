@@ -16,7 +16,7 @@ export class SideNavComponent implements OnInit {
     private userStore: Store<AppUserState>,
   ) { }
   
-  ngOnInit() {
+  async ngOnInit() {
     this.userStore
     .pipe(select(selectUserIsLogged))
     .subscribe((isLogged: boolean) => {

@@ -15,13 +15,13 @@
   </div>
   <div class="NewsCard_CategoryContainer">
     <div class="NewsCard_CategoryByLine" [appSkeleton]="hasSkeleton">
-      <p *ngIf="!hasSkeleton" class="app_font_xs">
-        {{ article?.byline }}
+      <p class="app_font_xs">
+        {{ !hasSkeleton ? article?.byline : 'By Tara Parker-Pope' }}
       </p>
     </div>
     <div class="NewsCard_CategorySection" [appSkeleton]="hasSkeleton">
-      <p *ngIf="!hasSkeleton" class="app_font_xs">
-        {{ article?.section }}
+      <p class="app_font_xs">
+        {{ !hasSkeleton ? article?.section : 'New York'}}
       </p>
     </div>
   </div>
@@ -39,26 +39,26 @@
 
 <ng-template #titleSkeleton>
   <div class="NewsCard_TitleSkeletonContainer">
-    <div
+    <p
       class="NewsCard_TextSkeleton"
       [appSkeleton]="hasSkeleton"
       style="width: 15%"
-    ></div>
-    <div
+    ></p>
+    <p
+      class="NewsCard_TextSkeleton"
+      [appSkeleton]="hasSkeleton"
+      style="width: 45%"
+    ></p>
+    <p
       class="NewsCard_TextSkeleton"
       [appSkeleton]="hasSkeleton"
       style="width: 30%"
-    ></div>
-    <div
+    ></p>
+    <p
       class="NewsCard_TextSkeleton"
       [appSkeleton]="hasSkeleton"
-      style="width: 30%"
-    ></div>
-    <div
-      class="NewsCard_TextSkeleton"
-      [appSkeleton]="hasSkeleton"
-      nbstyle="width: 50%;"
-    ></div>
+      style="width: 50%;"
+    ></p>
   </div>
 </ng-template>
 
@@ -88,7 +88,7 @@
     <div
       class="NewsCard_TextSkeleton"
       [appSkeleton]="hasSkeleton"
-      style="width: 30%"
+      style="width: 35%"
     ></div>
 
     <div

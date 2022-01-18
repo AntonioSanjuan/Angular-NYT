@@ -27,11 +27,16 @@ a {
 .skeleton {
   border-radius: 5px;
 
-  background:  linear-gradient(to right, #e5e3e3, #999999, #e5e3e3);
+  background: linear-gradient(to right, #e5e3e3, #999999, #e5e3e3);
   background-size: 200%;
   background-position: left;
 
   animation: load 2s ease-out 1s infinite normal;
+  
+  p {
+    color: transparent !important;
+    user-select: none;
+  }
 }
 
 @keyframes load{

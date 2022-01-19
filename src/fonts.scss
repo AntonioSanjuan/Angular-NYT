@@ -1,31 +1,28 @@
-$big-fontColor: #2b2b2b;
-$small-fontColor: #888;
-$normal-fontColor: #545454;
-$error-fontColor: #dd1f1f;
+@use './colors.scss';
 
 .app_font_xs {
-  color: $small-fontColor;
+  color: colors.$small-fontColor;
   font-size: 10px;
 }
 
 .app_font_s {
-    color: $small-fontColor;
+    color: colors.$small-fontColor;
     font-size: 12px;
 }
 
 .app_font_m {
-    color: $normal-fontColor;
+    color: colors.$normal-fontColor;
     font-size: 14px;
 }
 
 .app_font_error {
-    color: $error-fontColor;
+    color: colors.$error-fontColor;
     font-size: 14px;
     font-weight: 600;
 }
 
 .app_font_l {
-    color: $big-fontColor;
+    color: colors.$big-fontColor;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.2em;

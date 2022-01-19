@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
-import { SidenavStatus } from 'src/app/models/internal/sidebarStatus/sidebarStatus.model';
+import { SidenavStatus } from 'src/app/models/internal/inoutStatus/sidebarStatus.model';
 import { StoreMock } from 'src/app/services/state/utils/store.mock';
 
 import { AppLoginLayoutComponent } from './app-login-layout.component';

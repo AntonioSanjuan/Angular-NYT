@@ -4,6 +4,7 @@
 .MostPopularArticles_MainContainer {
   @extend %app_Col-Center-Center;
   height: inherit;
+  width: 100vw;
 }
 
 .MostPopularArticles_SubContainer {

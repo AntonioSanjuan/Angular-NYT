@@ -7,26 +7,22 @@ import {
   } from '@angular/animations';
   import { SidenavStatus } from '../models/internal/inoutStatus/sidebarStatus.model';
   
-  export const blurAnimation = trigger('blurInOut', [
+  export const searchAnimation = trigger('searchInOut', [
     state(
       SidenavStatus.Opened,
       style({
-        'filter': 'blur(10px)'
+        width: '100%'
       })
     ),
     state(
       SidenavStatus.Closed,
       style({
-        'filter': 'blur(0px)'
+        width: '0%',
       })
     ),
     transition(
-      `${SidenavStatus.Opened} => ${SidenavStatus.Closed}`,
-      animate('800ms ease-in-out')
-    ),
-    transition(
-      `${SidenavStatus.Closed} => ${SidenavStatus.Opened}`,
-      animate('800ms ease-in-out')
-    ),
+      `${SidenavStatus.Opened} <=> ${SidenavStatus.Closed}`,
+      animate('700ms ease-in')
+    )
   ]);
   

@@ -5,11 +5,6 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './section.component.html',
   styleUrls: ['./section.component.scss']
 })
-export class SectionComponent implements OnInit {
+export class SectionComponent {
   @Input() sectionName: string;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

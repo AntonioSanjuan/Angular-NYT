@@ -23,10 +23,24 @@
   height: 100%;
 }
 
-.sidenav_ProfileSection {
-  height: 80px;
+
+
+.sidenav_ProfileSection, 
+.sidenav_Search {
+  label {
+    margin-bottom: 5px;
+  }
+
   margin-bottom: 10px;
   border-bottom: 1px solid;
+}
+
+.sidenav_ProfileSection {
+  height: 80px;
+}
+
+.sidenav_Search {
+  display: none;
 }
 
 .sidenav_Section {
@@ -41,7 +55,7 @@
   border-top: 1px solid;
 
   #exitSection {
-    color: red !important;
+    color: colors.$app-error-color !important;
   }
 }
 
@@ -49,6 +63,10 @@
   .sidenav_NavContainer {
     top: 0;
     height: calc(100vh - #{sizes.$app-topnav-mobile-height});
-
+  }
+  
+  .sidenav_Search {
+    display: inherit;
+    padding-bottom: 10px;
   }
 }

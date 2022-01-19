@@ -1,0 +1,8 @@
+<div class="search_MainContainer">
+    <button (click)="search()" type="button" class="btn btn-primary">
+        <i class="bi bi-search"></i>
+    </button>
+    <div class="form-group" [@searchInOut]="isSearchOpened">
+        <input type="text" class="form-control" placeholder="search...">
+    </div>
+</div>

@@ -5,7 +5,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { SidenavStatus } from '../models/internal/sidebarStatus/sidebarStatus.model';
+import { SidenavStatus } from '../models/internal/inoutStatus/sidebarStatus.model';
 
 export const slideAnimation = trigger('slideInOut', [
   state(

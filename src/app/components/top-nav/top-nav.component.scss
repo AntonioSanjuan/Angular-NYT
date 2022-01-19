@@ -45,8 +45,7 @@
 .TopNav_Leftcontainer,
 .TopNav_Rightcontainer {
   @extend %app_Row-Center-Center;
-  height: 100%;
-  width: 20%;
+  height: 40px;
 }
 
 .TopNav_Rightcontainer {
@@ -55,6 +54,9 @@
 
 .TopNav_Leftcontainer {
   place-content: flex-start;
+  button {
+    margin-right: 10px;
+  }
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -78,5 +80,9 @@
     border-top-width: 2px;
 
     width: 95%;
+  }
+
+  .TopNav_Search {
+    display: none;
   }
 }

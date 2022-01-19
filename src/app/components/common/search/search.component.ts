@@ -15,8 +15,12 @@ export class SearchComponent {
 
   constructor() { }
 
-  search() {
+  toggleSearch() {
     this.switchSearchStatus();
+  }
+
+  search() {
+    
   }
 
   private switchSearchStatus() {

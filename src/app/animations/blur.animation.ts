@@ -5,27 +5,27 @@ import {
     transition,
     trigger,
   } from '@angular/animations';
-  import { SidenavStatus } from '../models/internal/inoutStatus/sidebarStatus.model';
+import { InoutStatus } from '../models/internal/inoutStatus/inoutStatus.model';
   
   export const blurAnimation = trigger('blurInOut', [
     state(
-      SidenavStatus.Opened,
+      InoutStatus.Opened,
       style({
         'filter': 'blur(10px)'
       })
     ),
     state(
-      SidenavStatus.Closed,
+      InoutStatus.Closed,
       style({
         'filter': 'blur(0px)'
       })
     ),
     transition(
-      `${SidenavStatus.Opened} => ${SidenavStatus.Closed}`,
+      `${InoutStatus.Opened} => ${InoutStatus.Closed}`,
       animate('800ms ease-in-out')
     ),
     transition(
-      `${SidenavStatus.Closed} => ${SidenavStatus.Opened}`,
+      `${InoutStatus.Closed} => ${InoutStatus.Opened}`,
       animate('800ms ease-in-out')
     ),
   ]);

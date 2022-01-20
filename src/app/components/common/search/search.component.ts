@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { searchAnimation } from 'src/app/animations/search.animation';
-import { SidenavStatus } from 'src/app/models/internal/inoutStatus/sidebarStatus.model';
+import { InoutStatus } from 'src/app/models/internal/inoutStatus/inoutStatus.model';
 
 @Component({
   selector: 'app-search',
@@ -11,7 +11,7 @@ import { SidenavStatus } from 'src/app/models/internal/inoutStatus/sidebarStatus
   ]
 })
 export class SearchComponent {
-  public isSearchOpened: SidenavStatus = SidenavStatus.Closed;
+  public isSearchOpened: InoutStatus = InoutStatus.Closed;
 
   constructor() { }
 
@@ -24,9 +24,9 @@ export class SearchComponent {
   }
 
   private switchSearchStatus() {
-    this.isSearchOpened = (this.isSearchOpened === SidenavStatus.Closed) ? 
-      SidenavStatus.Opened : 
-      SidenavStatus.Closed;
+    this.isSearchOpened = (this.isSearchOpened === InoutStatus.Closed) ? 
+      InoutStatus.Opened : 
+      InoutStatus.Closed;
   }
 
 }

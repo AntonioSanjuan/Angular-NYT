@@ -5,29 +5,29 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { SidenavStatus } from '../models/internal/inoutStatus/sidebarStatus.model';
+import { InoutStatus } from '../models/internal/inoutStatus/inoutStatus.model';
 
 export const slideAnimation = trigger('slideInOut', [
   state(
-    SidenavStatus.Opened,
+    InoutStatus.Opened,
     style({
       transform: 'translateX(0%)',
       marginLeft: '0px',
     })
   ),
   state(
-    SidenavStatus.Closed,
+    InoutStatus.Closed,
     style({
       transform: 'translateX(-100%)',
       marginLeft: '-200px',
     })
   ),
   transition(
-    `${SidenavStatus.Opened} => ${SidenavStatus.Closed}`,
+    `${InoutStatus.Opened} => ${InoutStatus.Closed}`,
     animate('800ms ease-in-out')
   ),
   transition(
-    `${SidenavStatus.Closed} => ${SidenavStatus.Opened}`,
+    `${InoutStatus.Closed} => ${InoutStatus.Opened}`,
     animate('800ms ease-in-out')
   ),
 ]);

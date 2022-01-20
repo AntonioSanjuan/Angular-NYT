@@ -5,24 +5,24 @@ import {
     transition,
     trigger,
   } from '@angular/animations';
-  import { SidenavStatus } from '../models/internal/inoutStatus/sidebarStatus.model';
+import { InoutStatus } from '../models/internal/inoutStatus/inoutStatus.model';
   
   export const searchAnimation = trigger('searchInOut', [
     state(
-      SidenavStatus.Opened,
+      InoutStatus.Opened,
       style({
         width: '100%'
       })
     ),
     state(
-      SidenavStatus.Closed,
+      InoutStatus.Closed,
       style({
         width: '0%',
       })
     ),
     transition(
-      `${SidenavStatus.Opened} <=> ${SidenavStatus.Closed}`,
-      animate('700ms ease-in')
+      `${InoutStatus.Opened} <=> ${InoutStatus.Closed}`,
+      animate('700ms ease-in-out')
     )
   ]);
   

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
-import { SidenavStatus } from 'src/app/models/internal/inoutStatus/sidebarStatus.model';
+import { InoutStatus } from 'src/app/models/internal/inoutStatus/inoutStatus.model';
 import { StoreMock } from 'src/app/services/state/utils/store.mock';
 
 import { AppLoginLayoutComponent } from './app-login-layout.component';
@@ -40,7 +40,7 @@ describe('AppLoginLayoutComponent', () => {
       subject.next(input);
       fixture.detectChanges();
 
-      expect(component.isSideNavOpened).toEqual(SidenavStatus.Opened)
+      expect(component.isSideNavOpened).toEqual(InoutStatus.Opened)
     });
   });
 });

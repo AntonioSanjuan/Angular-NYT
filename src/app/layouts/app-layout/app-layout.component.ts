@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { blurAnimation } from 'src/app/animations/blur.animation';
 import { slideAnimation } from 'src/app/animations/slide.animation';
-import { SidenavStatus } from 'src/app/models/internal/inoutStatus/sidebarStatus.model';
+import { InoutStatus } from 'src/app/models/internal/inoutStatus/inoutStatus.model';
 import { selectIsSideNavOpened } from 'src/app/services/state/layout/layout.selectors';
 import { AppLayoutState } from 'src/app/services/state/layout/models/appLayout.state';
 
@@ -13,7 +13,7 @@ import { AppLayoutState } from 'src/app/services/state/layout/models/appLayout.s
   animations: [slideAnimation, blurAnimation],
 })
 export class AppLayoutComponent implements OnInit {
-  public isSideNavOpened: SidenavStatus;
+  public isSideNavOpened: InoutStatus;
 
   constructor(private store: Store<AppLayoutState>) {}
 
@@ -22,8 +22,8 @@ export class AppLayoutComponent implements OnInit {
       .pipe(select(selectIsSideNavOpened))
       .subscribe((isSideNavOpened: boolean) => {
         this.isSideNavOpened = (isSideNavOpened)
-          ? SidenavStatus.Opened
-          : SidenavStatus.Closed;
+          ? InoutStatus.Opened
+          : InoutStatus.Closed;
       });
   }
 }

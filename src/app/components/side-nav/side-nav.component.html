@@ -8,7 +8,9 @@
       </div>
       <div class="sidenav_Search">
         <p class="app_font_m">Search content</p>
-        <app-search></app-search>
+        <app-search
+          (output)="goToSearchView($event)">
+        </app-search>
       </div>
       <div class="sidenav_Section">
         <app-section

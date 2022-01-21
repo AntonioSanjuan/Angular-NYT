@@ -30,6 +30,17 @@ export const routes: Routes = [
       },
     ],
   },
+  {
+    path: '',
+    component: AppLayoutComponent,
+    children: [
+      {
+        path: 'searchArticles',
+        loadChildren: () =>
+          import('../../pages/searchArticles/searchArticles.module').then((m) => m.SearchArticlesModule),
+      },
+    ],
+  },
   { path: '**', redirectTo: defaultRoute },
 ];
 

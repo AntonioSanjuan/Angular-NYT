@@ -1,0 +1,9 @@
+<div class="searchInput_MainContainer">
+    <button (click)="toggleSearch()" type="button" class="btn btn-dark">
+        <i class="bi bi-search"></i>
+    </button>
+    <div class="form-group" [@searchInOut]="isSearchOpened">
+        <input type="text" [(ngModel)]="textSearch" class="form-control" placeholder="Search...">
+    </div>
+</div>
+<button (click)="search()" type="button" [disabled]="textSearch.length === 0" class="btn btn-dark searchInput_MobileButton">search</button>

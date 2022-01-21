@@ -1,17 +1,17 @@
-import { featureData } from './../../services/state/data/data.reducer';
+import { featureData } from '../../services/state/data/data.reducer';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
 import { NYTMostPopularService } from 'src/app/services/NYT-data-supplier/most-popular/nyt-most-popular.service';
 import { DataReducer } from 'src/app/services/state/data/data.reducer';
-import { MostPopularArticlesComponent } from './mostPopularArticles.component';
+import { SearchArticlesComponent } from './searchArticles.component';
 
-const routes: Routes = [{ path: '', component: MostPopularArticlesComponent }];
+const routes: Routes = [{ path: '', component: SearchArticlesComponent }];
 
 @NgModule({
   declarations: [
-    MostPopularArticlesComponent,
+    SearchArticlesComponent,
   ],
   providers: [NYTMostPopularService],
   imports: [
@@ -21,4 +21,4 @@ const routes: Routes = [{ path: '', component: MostPopularArticlesComponent }];
   ],
   exports: [SharedModule],
 })
-export class MostPopularArticlesModule {}
+export class SearchArticlesModule {}

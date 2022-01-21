@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { AppUserState } from 'src/app/services/state/user/models/appUser.state';
 import { unsetUser } from 'src/app/services/state/user/user.actions';
@@ -13,6 +14,7 @@ export class SideNavComponent implements OnInit {
   public isLogged: boolean;
   
   constructor(
+    private routerService: Router,
     private userStore: Store<AppUserState>,
   ) { }
   
@@ -28,5 +30,10 @@ export class SideNavComponent implements OnInit {
     this.userStore.dispatch(
       unsetUser()
     );
+  }
+
+  goToSearchView(event) {
+    console.log("event", event)
+    this.routerService.navigate(['searchArticles'], { queryParams: { search: event } });
   }
 }

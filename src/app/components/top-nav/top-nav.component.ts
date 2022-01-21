@@ -14,6 +14,7 @@ import { switchIsSidenavOpenedAction } from 'src/app/services/state/layout/layou
 export class TopNavComponent implements OnInit {
   @Input() private readonly displayLoginButton = true;
   @Input() public readonly displaySidenavButton = true;
+  @Input() public readonly displaySearchButton = true;
   public loginButtonHidden: boolean;
   constructor(
     private routerService: Router,
@@ -39,6 +40,11 @@ export class TopNavComponent implements OnInit {
 
   public goToMainView(): void {
     this.routerService.navigate(['']);
+  }
+
+  public goToSearchView(event) {
+    console.log("event", event)
+    this.routerService.navigate(['searchArticles'], { queryParams: { search: event } });
   }
 
   public openSettings(): void {

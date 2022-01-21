@@ -4,8 +4,10 @@
       <button (click)="openSettings()" [hidden]="!displaySidenavButton" type="button" class="btn btn-dark">
         <i class="bi bi-list"></i>
       </button>
-      <div class="TopNav_Search">
-        <app-search></app-search>
+      <div class="TopNav_Search" [hidden]="!displaySearchButton">
+        <app-search
+          (output)="goToSearchView($event)">
+        </app-search>
       </div>
     </div>
     <div class="TopNav_Centercontainer" (click)="goToMainView()">

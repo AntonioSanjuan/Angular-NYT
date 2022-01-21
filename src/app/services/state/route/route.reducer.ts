@@ -1,1 +1,1 @@
-export const routeData = 'route';
+export const featureRoute = 'route';

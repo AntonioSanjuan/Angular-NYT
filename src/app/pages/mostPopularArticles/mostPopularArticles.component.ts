@@ -48,8 +48,6 @@ export class MostPopularArticlesComponent implements OnInit {
       await this.nytMostPopularService.getMostPopularViewedArticles(
         this.selectedPeriodOfTime
       );
-    console.log(this.nytMostPopularViewedArticles);
-
     this.addEmptyArticle();
     this.storeData();
   }

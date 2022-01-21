@@ -8,11 +8,13 @@ import {
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import {
-  appLayoutData,
+  featureData,
   LayoutReducer,
 } from 'src/app/services/state/layout/Layout.reducer';
 import { SectionComponent } from 'src/app/components/side-nav/components/section/section.component';
 import { ProfileSectionComponent } from 'src/app/components/side-nav/components/profile-section/profile-section.component';
+import { featureRoute } from 'src/app/services/state/route/route.reducer';
+import { routerReducer } from '@ngrx/router-store';
 
 const declarations = [SideNavComponent, ProfileSectionComponent, SectionComponent];
 @NgModule({
@@ -20,7 +22,8 @@ const declarations = [SideNavComponent, ProfileSectionComponent, SectionComponen
   imports: [
     SharedModule,
     StoreModule.forFeature(featureUser, UserReducer),
-    StoreModule.forFeature(appLayoutData, LayoutReducer),
+    StoreModule.forFeature(featureData, LayoutReducer),
+    StoreModule.forFeature(featureRoute, routerReducer),
   ],
   exports: [...declarations],
 })

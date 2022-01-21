@@ -5,6 +5,8 @@ import { AppUserState } from './user/models/appUser.state';
 import { DataReducer } from './data/data.reducer';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { LayoutReducer } from './layout/Layout.reducer';
+import { AppRouteState } from './route/models/appRoute.state';
+import { RouterReducerState, routerReducer } from "@ngrx/router-store";
 
 export const featureApp = 'app';
 
@@ -16,12 +18,15 @@ export interface AppRootState {
   user: AppUserState;
   data: AppDataState;
   layout: AppLayoutState;
+  route: RouterReducerState<AppRouteState>;
 }
 
 export const AppReducers = {
   user: UserReducer,
   data: DataReducer,
   layout: LayoutReducer,
+  route: routerReducer
+
 };
 
 export const selecAppState = createFeatureSelector<AppRootState>(featureApp);
@@ -39,4 +44,9 @@ export const selectDataState = createSelector(
 export const selectLayoutState = createSelector(
   selecAppState,
   (state: AppRootState) => state.layout
+);
+
+export const selectRouteState = createSelector(
+  selecAppState,
+  (state: AppRootState) => state.route
 );
